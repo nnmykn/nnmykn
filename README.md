@@ -16,6 +16,7 @@ Develops and operates [N高情報サイト](https://nnn.education/).
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=nnmykn)
 
 ## Article
+- [Comming soon...](https://nixo.hateblo.jp/entry/hello-corp/)
 - [SpotifyAPIを使ってNowPlayingをTwitterにツイートする。【Python】](https://qiita.com/nixo/items/d1602d0817a9633831fd)
 - [Linux非対応なtp-linkの無線LAN子機を使う方法](https://qiita.com/nixo/items/624078a455d2f19c10de)
 
