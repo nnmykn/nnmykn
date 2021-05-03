@@ -17,6 +17,7 @@ Develops and operates [N高情報サイト](https://nnn.education/).
 
 ## Article
 - [SpotifyAPIを使ってNowPlayingをTwitterにツイートする。【Python】](https://qiita.com/nixo/items/d1602d0817a9633831fd)
+- [Linux非対応なtp-linkの無線LAN子機を使う方法](https://qiita.com/nixo/items/624078a455d2f19c10de)
 
 ## 😖
 Okay, NIXO, go ahead and do what you believe in. But you know, it's hard to live differently from others. You can't blame anyone for what happens.
