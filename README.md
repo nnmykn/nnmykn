@@ -14,3 +14,8 @@ Develops and operates [N高情報サイト](https://nnn.education/).
 
 ![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=nnmykn)
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=nnmykn)
+
+## But...😖
+But, you know, it's hard enough to live differently.
+
+![](./E0eci5MVoAgsKqz.png)
