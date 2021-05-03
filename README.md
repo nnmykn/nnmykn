@@ -12,7 +12,5 @@ I'm working on a variety of things, including websites, smartphone apps, server-
 
 Develops and operates [N高情報サイト](https://nnn.education/).
 
-AutoScale IncでSocialDogの開発するのが高校生のうちの目標です😁👊
-
 ![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=nnmykn)
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=nnmykn)
