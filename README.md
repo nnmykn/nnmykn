@@ -16,6 +16,6 @@ Develops and operates [N高情報サイト](https://nnn.education/).
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=nnmykn)
 
 ## 😖
-But, you know, it's hard enough to live differently.
+Okay, NIXO, go ahead and do what you believe in. But you know, it's hard to live differently from others. You can't blame anyone for what happens.
 
 ![](./E0eci5MVoAgsKqz_waifu2x_art_noise3_scale_tta_1.png)
