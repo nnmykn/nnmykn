@@ -15,6 +15,9 @@ Develops and operates [N高情報サイト](https://nnn.education/).
 ![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=nnmykn)
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=nnmykn)
 
+## Article
+- [SpotifyAPIを使ってNowPlayingをTwitterにツイートする。【Python】](https://qiita.com/nixo/items/d1602d0817a9633831fd)
+
 ## 😖
 Okay, NIXO, go ahead and do what you believe in. But you know, it's hard to live differently from others. You can't blame anyone for what happens.
 
