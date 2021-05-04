@@ -33,4 +33,6 @@ Okay, NIXO, go ahead and do what you believe in. But you know, it's hard to live
 |  Portfolio  |  [nixo.jp](https://nixo.jp)  |
 |  Twitter(Main)  |  [@NIIKUUN](https://twitter.com/NIIKUUN)  |
 |  Twitter(Dev)  |  [@NIXO_dev](https://twitter.com/NIXO_dev)  |
+|  Qiita  |  [@nixo](https://qiita.com/nixo)  |
+|  Zenn  |  [にくそ](https://zenn.dev/nixo)  |
 
