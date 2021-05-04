@@ -26,3 +26,8 @@ Okay, NIXO, go ahead and do what you believe in. But you know, it's hard to live
 ![](./E0eci5MVoAgsKqz_waifu2x_art_noise3_scale_tta_1.png)
 
 ![](https://komarev.com/ghpvc/?username=nnmykn)
+
+## Other link
+|  Twitter(Main)  |  [@NIIKUUN](https://twitter.com/NIIKUUN)  |
+|  Twitter(Dev)  |  [@NIXO_dev](https://twitter.com/NIXO_dev)  |
+|  Portfolio  |  [nixo.jp](https://nixo.jp)  |
