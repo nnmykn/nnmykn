@@ -24,3 +24,5 @@ Develops and operates [N高情報サイト](https://nnn.education/).
 Okay, NIXO, go ahead and do what you believe in. But you know, it's hard to live differently from others. You can't blame anyone for what happens.
 
 ![](./E0eci5MVoAgsKqz_waifu2x_art_noise3_scale_tta_1.png)
+
+![](https://komarev.com/ghpvc/?username=nnmykn)
