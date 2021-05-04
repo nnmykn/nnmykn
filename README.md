@@ -30,6 +30,7 @@ Okay, NIXO, go ahead and do what you believe in. But you know, it's hard to live
 ## Other link
 |  Name  |  Link  |
 | ---- | ---- |
+|  Portfolio  |  [nixo.jp](https://nixo.jp)  |
 |  Twitter(Main)  |  [@NIIKUUN](https://twitter.com/NIIKUUN)  |
 |  Twitter(Dev)  |  [@NIXO_dev](https://twitter.com/NIXO_dev)  |
-|  Portfolio  |  [nixo.jp](https://nixo.jp)  |
+
