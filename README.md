@@ -28,6 +28,8 @@ Okay, NIXO, go ahead and do what you believe in. But you know, it's hard to live
 ![](https://komarev.com/ghpvc/?username=nnmykn)
 
 ## Other link
+|  Name  |  Link  |
+| ---- | ---- |
 |  Twitter(Main)  |  [@NIIKUUN](https://twitter.com/NIIKUUN)  |
 |  Twitter(Dev)  |  [@NIXO_dev](https://twitter.com/NIXO_dev)  |
 |  Portfolio  |  [nixo.jp](https://nixo.jp)  |
