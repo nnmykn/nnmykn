@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/github/followers/nnmykn?label=Followers&style=social) ![](https://img.shields.io/twitter/follow/NIXO_dev?label=Followers&style=social)
 
-![](https://img.shields.io/badge/age-15-red) ![](https://img.shields.io/badge/birthday-2005%2F10%2F11-red) ![](https://img.shields.io/badge/Python-%E2%9D%A4-yellow) ![](https://img.shields.io/badge/Golang-%E2%9D%A4-blue) ![](https://img.shields.io/badge/Next.JS-%E2%9D%A4-black) ![](https://img.shields.io/badge/JAVA-%E2%9D%A4-red)
+![](https://img.shields.io/badge/age-15-red) ![](https://img.shields.io/badge/birthday-2005%2F10%2F11-red) ![](https://img.shields.io/badge/Python-%E2%9D%A4-yellow)
 
 The high school I go to is N High School.
 
