@@ -12,6 +12,8 @@ I'm working on a variety of things, including websites, server-side, and infrast
 
 Develops and operates [N高情報サイト](https://nnn.education/).
 
+ネット用アカウント→ @nxo0
+
 ![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=nnmykn)
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=nnmykn)
 
@@ -20,10 +22,6 @@ Develops and operates [N高情報サイト](https://nnn.education/).
 - [SpotifyAPIを使ってNowPlayingをTwitterにツイートする。【Python】](https://qiita.com/nixo/items/d1602d0817a9633831fd)
 - [Linux非対応なtp-linkの無線LAN子機を使う方法](https://qiita.com/nixo/items/624078a455d2f19c10de)
 
-## 😖
-Okay, NIXO, go ahead and do what you believe in. But you know, it's hard to live differently from others. You can't blame anyone for what happens.
-
-![](./E0eci5MVoAgsKqz_waifu2x_art_noise3_scale_tta_1.png)
 
 ![](https://komarev.com/ghpvc/?username=nnmykn)
 
