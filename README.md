@@ -12,7 +12,7 @@ I'm working on a variety of things, including websites, server-side, and infrast
 
 Develops and operates [N高情報サイト](https://nnn.education/).
 
-ネット用アカウント→ @nxo0
+ネット用アカウント→ [@nxo0](https://github.com/nxo0/)
 
 ![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=nnmykn)
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=nnmykn)
