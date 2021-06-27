@@ -8,7 +8,7 @@ The high school I go to is N High School.
 
 My nickname is にくそ/NIXO/nxo0.
 
-I'm working on a variety of things, including websites, server-side, and infrastructure.
+I'm working on a variety of things, including Web,Android,Linux.
 
 ネット用アカウント→ [@nxo0](https://github.com/nxo0/)
 
