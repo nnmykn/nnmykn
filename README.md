@@ -26,7 +26,7 @@ I'm working on a variety of things, including Web,Android,Linux.
 ## Other link
 |  Name  |  Link  |
 | ---- | ---- |
-|  Portfolio  |  [kan.run](https://kan.run)  |
+|  Homeぱげ  |  [kan.run](https://kan.run)  |
 |  Twitter(Main)  |  [@NIIKUUN](https://twitter.com/NIIKUUN)  |
 |  Twitter(Dev)  |  [@nxo000](https://twitter.com/nxo000)  |
 |  Qiita  |  [@nixo](https://qiita.com/nixo)  |
