@@ -8,13 +8,13 @@
 
 ネット用アカウント→ [@nxo0](https://github.com/nxo0/)
 
-![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=nnmykn)
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=nnmykn)
 
 ## Article
 - [NotionとSuperを使って爆速でWebサイトを公開する](https://zenn.dev/nixo/articles/e880ef3ee77c221c8933)
 - [SpotifyAPIを使ってNowPlayingをTwitterにツイートする。【Python】](https://qiita.com/nixo/items/d1602d0817a9633831fd)
 - [Linux非対応なtp-linkの無線LAN子機を使う方法](https://qiita.com/nixo/items/624078a455d2f19c10de)
+- [【GoogleDrive】ほんのちょっと、お金に余裕があるならEnterpriseを契約すると容量無制限になり、幸せになる](https://kan.run/tiken/2021/googledriveenterprise)
+- [高校生がクレジット決済をする方法とおすすめサービス](https://kan.run/tiken/2021/credit-pay)
 
 
 ![](https://komarev.com/ghpvc/?username=nnmykn)
