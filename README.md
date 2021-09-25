@@ -4,11 +4,7 @@
 
 ![](https://img.shields.io/badge/age-15-red) ![](https://img.shields.io/badge/birthday-2005%2F10%2F11-red) ![](https://img.shields.io/badge/Python-%E2%9D%A4-yellow)
 
-The high school I go to is N High School.
-
-My nickname is にくそ/NIXO/nxo0.
-
-I'm working on a variety of things, including Web,Android,Linux.
+色んな事をしてます
 
 ネット用アカウント→ [@nxo0](https://github.com/nxo0/)
 
