@@ -15,6 +15,7 @@
 - [Linux非対応なtp-linkの無線LAN子機を使う方法](https://qiita.com/nixo/items/624078a455d2f19c10de)
 - [【GoogleDrive】ほんのちょっと、お金に余裕があるならEnterpriseを契約すると容量無制限になり、幸せになる](https://kan.run/tiken/2021/googledriveenterprise)
 - [高校生がクレジット決済をする方法とおすすめサービス](https://kan.run/tiken/2021/credit-pay)
+- [暗号資産(仮想通貨)入門](https://sushi.fishing/crypto-currency-introduction)
 
 
 ![](https://komarev.com/ghpvc/?username=nnmykn)
