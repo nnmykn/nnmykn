@@ -6,8 +6,6 @@
 
 色んな事をしてます
 
-ネット用アカウント→ [@nxo0](https://github.com/nxo0/)
-
 
 ## Article
 - [Webメディアの新規立ち上げをNotion+Superで行ってみた。](https://zenn.dev/nixo/articles/c9b9c99555af9c)
