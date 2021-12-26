@@ -26,9 +26,8 @@
 |  Name  |  Link  |
 | ---- | ---- |
 |  Homeぱげ  |  [kan.run](https://kan.run)  |
-|  Twitter(Main)  |  [@NIIKUUN](https://twitter.com/NIIKUUN)  |
+|  Twitter(Main)  |  [@Ninomiyarun](https://twitter.com/Ninomiyarun)  |
 |  Twitter(Dev)  |  [@nxo000](https://twitter.com/nxo000)  |
 |  Qiita  |  [@nixo](https://qiita.com/nixo)  |
 |  Zenn  |  [にくそ](https://zenn.dev/nixo)  |
-|  あたらしいWeb  |  [@nixo](https://neweb.io/writer/nixo)  |
 
