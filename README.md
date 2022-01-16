@@ -6,6 +6,10 @@
 
 色んな事をしてます
 
+[![Lang](https://github-readme-stats.vercel.app/api/wakatime?username=nnmykn&layout=compact&theme=dark)](https://github.com/nnmykn)
+
+[![github stats](https://github-readme-stats.vercel.app/api?username=nnmykn&show_icons=true&theme=dark&count_private=true)](https://github.com/nnmykn)
+
 
 ## Article
 - [Webメディアの新規立ち上げをNotion+Superで行ってみた。](https://zenn.dev/nixo/articles/c9b9c99555af9c)
