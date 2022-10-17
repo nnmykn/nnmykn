@@ -16,18 +16,14 @@
 - [NotionとSuperを使って爆速でWebサイトを公開する](https://zenn.dev/nixo/articles/e880ef3ee77c221c8933)
 - [SpotifyAPIを使ってNowPlayingをTwitterにツイートする。【Python】](https://qiita.com/nixo/items/d1602d0817a9633831fd)
 - [Linux非対応なtp-linkの無線LAN子機を使う方法](https://qiita.com/nixo/items/624078a455d2f19c10de)
-- [【GoogleDrive】ほんのちょっと、お金に余裕があるならEnterpriseを契約すると容量無制限になり、幸せになる](https://kan.run/tiken/2021/googledriveenterprise)
-- [高校生がクレジット決済をする方法とおすすめサービス](https://kan.run/tiken/2021/credit-pay)
-
 
 ![](https://komarev.com/ghpvc/?username=nnmykn)
 
 ## Other link
 |  Name  |  Link  |
 | ---- | ---- |
-|  Homeぱげ  |  [kan.run](https://kan.run)  |
+|  Homepage  |  [kan.run](https://kan.run)  |
 |  Twitter(Main)  |  [@Ninomiyarun](https://twitter.com/Ninomiyarun)  |
-|  Twitter(Dev)  |  [@nxo000](https://twitter.com/nxo000)  |
 |  Qiita  |  [@nixo](https://qiita.com/nixo)  |
-|  Zenn  |  [にくそ](https://zenn.dev/nixo)  |
+|  Zenn  |  [二宮 貫](https://zenn.dev/nixo)  |
 
