@@ -1,8 +1,8 @@
-# Hi there👋 I'm Ninomiya Kan
+# Hi there👋 I'm Kan Ninomiya
 
 ![](https://img.shields.io/github/followers/nnmykn?label=Followers&style=social) ![](https://img.shields.io/twitter/follow/nxo000?label=Followers&style=social)
 
-![](https://img.shields.io/badge/age-16-red) ![](https://img.shields.io/badge/birthday-2005%2F10%2F11-red) ![](https://img.shields.io/badge/Python-%E2%9D%A4-yellow)
+![](https://img.shields.io/badge/age-17-red) ![](https://img.shields.io/badge/birthday-2005%2F10%2F11-red)
 
 色んな事をしてます
 
