@@ -65,15 +65,13 @@ export default function Home() {
           title={'X(Twitter)'}
           url={'https://x.com/Ninomiyarun'}
           urlForPreview={'https://x.com/Ninomiyarun'}
-          badgeText={'直接運営'}
-          tags={['毎日更新']}
+          badgeText={'SNS'}
         />
         <ProjectCard
           title={'Instagram'}
           url={'https://instagram.com/ninomiya.kan/'}
           urlForPreview={'https://instagram.com/ninomiya.kan/'}
-          badgeText={'運営'}
-          tags={['完全無料', 'エロ動画']}
+          badgeText={'SNS'}
         />
         <ProjectCard
           title={'PEOPLE!'}
