@@ -17,18 +17,18 @@ export default function ProjectCard({
   tags,
 }: Props) {
   return (
-    <div className={'relative'}>
+    <div class={'relative'}>
       {badgeText && (
         <Badge
           variant="secondary"
-          className="absolute -top-2 -right-2 z-10 bg-[#3139FB] hover:bg-[#3139FB] text-xs text-white transform rotate-12"
+          class="absolute -top-2 -right-2 z-10 bg-[#3139FB] hover:bg-[#3139FB] text-xs text-white transform rotate-12"
         >
           {badgeText}
         </Badge>
       )}
       <Link href={url} target={'_blank'}>
         <div
-          className={
+          class={
             'relative rounded-2xl border-2 border-black overflow-hidden h-72 flex flex-col justify-end'
           }
           style={{
@@ -37,13 +37,13 @@ export default function ProjectCard({
             backgroundPosition: 'center top',
           }}
         >
-          <div className="absolute inset-0 bg-gray-900 bg-opacity-50" />
-          <div className="relative p-3 z-10">
-            <h2 className={'font-black text-base text-white mb-2'}>{title}</h2>
+          <div class="absolute inset-0 bg-gray-900 bg-opacity-50" />
+          <div class="relative p-3 z-10">
+            <h2 class={'font-black text-base text-white mb-2'}>{title}</h2>
             {tags && tags.length > 0 && (
-              <div className="flex flex-wrap gap-2">
+              <div class="flex flex-wrap gap-2">
                 {tags.map((tag) => (
-                  <Badge key={`${tag}`} variant="secondary" className="text-xs">
+                  <Badge key={`${tag}`} variant="secondary" class="text-xs">
                     {tag}
                   </Badge>
                 ))}
