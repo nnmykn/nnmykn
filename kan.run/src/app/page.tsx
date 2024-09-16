@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       <div className={'space-y-4'}>
         <Link href={'https://kan.run/'}>
-          <h1 className={'font-angle text-7xl text-center my-32'}>ニノミヤ カン(18)</h1>
+          <h1 className={'font-angle text-7xl text-center my-32'}>ニノミヤ カン</h1>
         </Link>
       </div>
 
