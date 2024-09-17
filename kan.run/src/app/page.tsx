@@ -44,9 +44,34 @@ export default function Home() {
               <p>TypeScript</p>
               <p>Python</p>
           </div>
+          <div className={'m-4 text-sm space-y-2'}>
+              <h3 className={'font-bold'}>フレームワーク・ライブラリ</h3>
+              <p>NestJS</p>
+              <p>Hono</p>
+              <p>Express</p>
+              <p>Next.js</p>
+              <p>Remix</p>
+              <p>React Native / Expo</p>
+              <p>Vue / Nuxt</p>
+              <p>LINE API SDK</p>
+              <p>Stripe SDK</p>
+              <p>TailwindCSS</p>
+          </div>
+          <div className={'m-4 text-sm space-y-2'}>
+              <h3 className={'font-bold'}>API</h3>
+              <p>OpenAPI</p>
+              <p>GraphQL</p>
+          </div>
+          <div className={'m-4 text-sm space-y-2'}>
+              <h3 className={'font-bold'}>データベース</h3>
+              <p>PostgreSQL</p>
+              <p>MariaDB / MySQL</p>
+              <p>SQLite</p>
+              <p>DynamoDB</p>
+          </div>
 
           <div className={'m-4 mb-8 text-xl'}>
-          <h2 className={'font-angle text-5xl'}>カンレン</h2>
+              <h2 className={'font-angle text-5xl'}>カンレン</h2>
           </div>
           <div className={'grid grid-cols-2 gap-x-2 gap-y-8 m-4 mb-24'}>
               <ProjectCard
