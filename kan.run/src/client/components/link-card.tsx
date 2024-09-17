@@ -16,7 +16,7 @@ export default function LinkCard({
   return (
       <Link href={url} className="block">
         <div className="border border-gray-300 shadow m-4 rounded-2xl overflow-hidden">
-          <div className="flex flex-col sm:flex-row">
+          <div className="flex flex-col">
             <div className="w-full sm:w-32 h-32">
               <img
                   src={`https://render.ero.ist/?url=${urlForPreview}`}
