@@ -16,6 +16,11 @@ export default function Page({children}: Props) {
             <div>
                 {children}
             </div>
+            <div className={'space-y-4 bg-black'}>
+                <Link href={'/'}>
+                    <h3 className={'font-angle text-7xl text-center text-white my-20'}>ニノミヤ カン。</h3>
+                </Link>
+            </div>
         </div>
     )
 }
