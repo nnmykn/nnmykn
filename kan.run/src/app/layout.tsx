@@ -28,8 +28,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang={'ja'}>
-      <body class={`${font.variable} ${angle.variable}`}>
-        <div class="mx-auto w-full max-w-[500px] shadow-xl min-h-screen overflow-x-hidden">
+      <body className={`${font.variable} ${angle.variable}`}>
+        <div className="mx-auto w-full max-w-[500px] shadow-xl min-h-screen overflow-x-hidden">
           {children}
         </div>
         <Toaster richColors={true} />

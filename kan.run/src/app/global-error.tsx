@@ -46,22 +46,22 @@ export default function GlobalError({
     <Dialog onOpenChange={setOpen} open={open}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle class={'text-sm font-semibold text-neutral-700'}>
-            <p class={'mt-1'}>予期せぬエラーが発生しました。</p>
+          <DialogTitle className={'text-sm font-semibold text-neutral-700'}>
+            <p className={'mt-1'}>予期せぬエラーが発生しました。</p>
           </DialogTitle>
         </DialogHeader>
-        <Table class={'text-xs'}>
+        <Table className={'text-xs'}>
           <TableHeader>
             <TableRow>
-              <TableHead class={'w-[100px]'}>項目</TableHead>
+              <TableHead className={'w-[100px]'}>項目</TableHead>
               <TableHead>詳細</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {errorDetails.map((item) => (
               <TableRow key={item.label}>
-                <TableCell class={'font-medium'}>{item.label}</TableCell>
-                <TableCell class={'line-clamp-3 break-all'}>
+                <TableCell className={'font-medium'}>{item.label}</TableCell>
+                <TableCell className={'line-clamp-3 break-all'}>
                   {item.value}
                 </TableCell>
               </TableRow>
@@ -69,8 +69,8 @@ export default function GlobalError({
           </TableBody>
         </Table>
         <DialogFooter>
-          <Link class={'flex-1'} href={'/'}>
-            <Button class={'w-full'} size={'sm'} variant={'outline'}>
+          <Link className={'flex-1'} href={'/'}>
+            <Button className={'w-full'} size={'sm'} variant={'outline'}>
               トップに戻る
             </Button>
           </Link>

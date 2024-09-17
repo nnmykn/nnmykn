@@ -4,16 +4,16 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div>
-      <div class={'space-y-4'}>
+      <div className={'space-y-4'}>
         <Link href={'https://kan.run/'}>
-          <h1 class={'font-angle text-7xl text-center my-32'}>ニノミヤ カン</h1>
+          <h1 className={'font-angle text-7xl text-center my-32'}>ニノミヤ カン</h1>
         </Link>
       </div>
 
-      <div class={'m-4 text-xl'}>
-        <h2 class={'font-angle text-5xl'}>ナニ？</h2>
+      <div className={'m-4 text-xl'}>
+        <h2 className={'font-angle text-5xl'}>ナニ？</h2>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
+      <div className={'m-4 text-sm space-y-2'}>
         <p>
           幼少期からPCを触り始め、小学校低学年よりプログラミングを開始、中学生で初めてWebサービスのリリースを経験。
         </p>
@@ -23,23 +23,23 @@ export default function Home() {
         <p>
           AIを活用したサービス開発に早期から着手し、2022年10月にLINEで使用可能なAIチャットボット「Lina（現在の友達数は1万人以上）」を開発し、事業譲渡を行ったのち株式会社FP16を共同創業。
         </p>
-        <h3 class={'text-right font-angle text-4xl'}>ニノミヤ カン</h3>
+        <h3 className={'text-right font-angle text-4xl'}>ニノミヤ カン</h3>
       </div>
 
-      <div class={'m-4 text-xl'}>
-        <h2 class={'font-angle text-5xl'}>シゴト</h2>
+      <div className={'m-4 text-xl'}>
+        <h2 className={'font-angle text-5xl'}>シゴト</h2>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
+      <div className={'m-4 text-sm space-y-2'}>
         <p>【株式会社FP16 代表取締役社長兼COO】2024.01~</p>
         <p>【株式会社ツクリエ エンジニア】2023.07~</p>
         <p>【株式会社stak PR・エンジニア】2022.10~2023.06</p>
         <p>【supersonar(PICRA)】2023.06~2024.01</p>
       </div>
 
-      <div class={'m-4 text-xl'}>
-        <h2 class={'font-angle text-5xl'}>カイハツガイヨウ</h2>
+      <div className={'m-4 text-xl'}>
+        <h2 className={'font-angle text-5xl'}>カイハツガイヨウ</h2>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
+      <div className={'m-4 text-sm space-y-2'}>
         <p>
           ウェブシステム、フルスクラッチ B2B
           ECサイト、AIサービスなど、多岐にわたるシステム開発プロジェクトを主導。
@@ -58,23 +58,23 @@ export default function Home() {
         <p>
           新規事業開発(MVP開発)を多く行ってきており、1から開発を行うのが得意です。
         </p>
-        <h3 class={'text-right font-angle text-4xl'}>ニノミヤ カン</h3>
+        <h3 className={'text-right font-angle text-4xl'}>ニノミヤ カン</h3>
       </div>
 
-      <div class={'m-4 text-xl'}>
-        <h2 class={'font-angle text-5xl'}>ギジュツ</h2>
+      <div className={'m-4 text-xl'}>
+        <h2 className={'font-angle text-5xl'}>ギジュツ</h2>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
-        <h3 class={'font-bold'}>概要</h3>
+      <div className={'m-4 text-sm space-y-2'}>
+        <h3 className={'font-bold'}>概要</h3>
         <p>フロントエンド開発 / バックエンド開発 / AIサービス開発</p>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
-        <h3 class={'font-bold'}>開発言語</h3>
+      <div className={'m-4 text-sm space-y-2'}>
+        <h3 className={'font-bold'}>開発言語</h3>
         <p>TypeScript</p>
         <p>Python</p>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
-        <h3 class={'font-bold'}>フレームワーク・ライブラリ</h3>
+      <div className={'m-4 text-sm space-y-2'}>
+        <h3 className={'font-bold'}>フレームワーク・ライブラリ</h3>
         <p>NestJS</p>
         <p>Hono</p>
         <p>Express</p>
@@ -87,39 +87,39 @@ export default function Home() {
         <p>TailwindCSS</p>
         <p>MicroCMS</p>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
-        <h3 class={'font-bold'}>API</h3>
+      <div className={'m-4 text-sm space-y-2'}>
+        <h3 className={'font-bold'}>API</h3>
         <p>OpenAPI</p>
         <p>GraphQL</p>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
-        <h3 class={'font-bold'}>データベース</h3>
+      <div className={'m-4 text-sm space-y-2'}>
+        <h3 className={'font-bold'}>データベース</h3>
         <p>PostgreSQL</p>
         <p>MariaDB / MySQL</p>
         <p>SQLite</p>
         <p>DynamoDB</p>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
-        <h3 class={'font-bold'}>クラウドプラットフォーム</h3>
+      <div className={'m-4 text-sm space-y-2'}>
+        <h3 className={'font-bold'}>クラウドプラットフォーム</h3>
         <p>AWS</p>
         <p>GCP</p>
         <p>Supabase</p>
         <p>Cloudflare</p>
         <p>Vercel</p>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
-        <h3 class={'font-bold'}>DevOps・インフラ</h3>
+      <div className={'m-4 text-sm space-y-2'}>
+        <h3 className={'font-bold'}>DevOps・インフラ</h3>
         <p>Docker</p>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
-        <h3 class={'font-bold'}>IaC</h3>
+      <div className={'m-4 text-sm space-y-2'}>
+        <h3 className={'font-bold'}>IaC</h3>
         <p>AWS CloudFormation</p>
         <p>AWS CDK</p>
         <p>Terraform</p>
         <p>CDK for Terraform</p>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
-        <h3 class={'font-bold'}>バージョン管理・CI/CD</h3>
+      <div className={'m-4 text-sm space-y-2'}>
+        <h3 className={'font-bold'}>バージョン管理・CI/CD</h3>
         <p>Git</p>
         <p>GitHub</p>
         <p>GitHub Actions</p>
@@ -128,16 +128,16 @@ export default function Home() {
         <p>Bitbucket</p>
         <p>AWS CodeBuild</p>
       </div>
-      <div class={'m-4 text-sm space-y-2'}>
-        <h3 class={'font-bold'}>タスク管理・ドキュメント</h3>
+      <div className={'m-4 text-sm space-y-2'}>
+        <h3 className={'font-bold'}>タスク管理・ドキュメント</h3>
         <p>Notion</p>
         <p>Backlog</p>
         <p>Linear</p>
         <p>Asana</p>
       </div>
 
-      <div class={'m-4 text-sm space-y-2'}>
-        <h3 class={'font-bold'}>AI</h3>
+      <div className={'m-4 text-sm space-y-2'}>
+        <h3 className={'font-bold'}>AI</h3>
         <p>Google Colab</p>
         <p>Ollama</p>
         <p>LangChain</p>
@@ -148,10 +148,10 @@ export default function Home() {
         <p>YOLO</p>
       </div>
 
-      <div class={'m-4 mb-8 text-xl'}>
-        <h2 class={'font-angle text-5xl'}>カンレン</h2>
+      <div className={'m-4 mb-8 text-xl'}>
+        <h2 className={'font-angle text-5xl'}>カンレン</h2>
       </div>
-      <div class={'grid grid-cols-2 gap-x-2 gap-y-8 m-4 mb-24'}>
+      <div className={'grid grid-cols-2 gap-x-2 gap-y-8 m-4 mb-24'}>
         <ProjectCard
           title={'株式会社FP16'}
           url={'https://fp16.co.jp/'}
