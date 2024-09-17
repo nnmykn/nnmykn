@@ -37,7 +37,7 @@ export default function Home() {
       </div>
 
       <div className={'m-4 text-xl'}>
-        <h2 className={'font-angle text-5xl'}>カイハツガイヨウ</h2>
+        <h2 className={'font-angle text-5xl'}>カイハツシャトシテ。</h2>
       </div>
       <div className={'m-4 text-sm space-y-2'}>
         <p>
@@ -58,7 +58,6 @@ export default function Home() {
         <p>
           新規事業開発(MVP開発)を多く行ってきており、1から開発を行うのが得意です。
         </p>
-        <h3 className={'text-right font-angle text-4xl'}>ニノミヤ カン</h3>
       </div>
 
       <div className={'m-4 text-xl'}>
