@@ -80,13 +80,13 @@ export default function Home() {
           badgeText={'開発中！'}
           tags={['toC', '自社サービス']}
         />
-        <ProjectCard
-          title={'エロイスト'}
-          url={'https://ero.ist/'}
-          urlForPreview={'https://ero.ist/'}
-          badgeText={'運営中'}
-          tags={['成人向け', 'toC']}
-        />
+        {/*<ProjectCard*/}
+        {/*  title={'エロイスト'}*/}
+        {/*  url={'https://ero.ist/'}*/}
+        {/*  urlForPreview={'https://ero.ist/'}*/}
+        {/*  badgeText={'運営中'}*/}
+        {/*  tags={['成人向け', 'toC']}*/}
+        {/*/>*/}
       </div>
     </div>
   )
