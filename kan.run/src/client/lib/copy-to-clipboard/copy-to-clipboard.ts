@@ -3,9 +3,7 @@ import { toast } from 'sonner'
 async function copyToClipboard(body: string) {
   try {
     await navigator.clipboard.writeText(body)
-  } catch (err) {
-    console.error('Failed to copy: ', err)
-  }
+  } catch (_err) {}
 }
 
 export default async function handleUrlClick(
@@ -16,7 +14,5 @@ export default async function handleUrlClick(
   try {
     await copyToClipboard(body)
     toast.success(title, { description: description })
-  } catch (err) {
-    console.error('Failed to copy text: ', err)
-  }
+  } catch (_err) {}
 }

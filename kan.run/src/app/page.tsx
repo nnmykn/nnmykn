@@ -1,7 +1,6 @@
+import LinkCard from '@/client/components/link-card.tsx'
+import Page from '@/client/components/page.tsx'
 import ProjectCard from '@/client/components/project-card.tsx'
-import Link from 'next/link'
-import LinkCard from "@/client/components/link-card.tsx";
-import Page from "@/client/components/page.tsx";
 
 export default function Home() {
   return (
@@ -59,7 +58,12 @@ export default function Home() {
       <div className={'m-4 text-xl'}>
         <h2 className={'font-angle text-5xl'}>ギジュツ。</h2>
       </div>
-        <LinkCard title={'技術詳細'} description={'扱うことの出来る技術について。'} url={'/tech'} urlForPreview={'https://www.kan.run/tech'} />
+      <LinkCard
+        title={'技術詳細'}
+        description={'扱うことの出来る技術について。'}
+        url={'/tech'}
+        urlForPreview={'https://www.kan.run/tech'}
+      />
 
       <div className={'m-4 mb-8 text-xl'}>
         <h2 className={'font-angle text-5xl'}>カンレン。</h2>
