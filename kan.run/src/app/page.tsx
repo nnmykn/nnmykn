@@ -64,7 +64,7 @@ export default function Home() {
       <div className={'m-4 mb-8 text-xl'}>
         <h2 className={'font-angle text-5xl'}>カンレン。</h2>
       </div>
-      <div className={'grid grid-cols-2 gap-x-2 gap-y-8 m-4 mb-24'}>
+      <div className={'grid grid-cols-2 gap-x-2 gap-y-8 m-4'}>
         <ProjectCard
           title={'株式会社FP16'}
           url={'https://fp16.co.jp/'}
