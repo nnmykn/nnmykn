@@ -39,14 +39,14 @@ export default function Home() {
           <div className={'m-4 text-xl'}>
               <h2 className={'font-angle text-5xl'}>ギジュツ</h2>
           </div>
-          <h3 className={'font-angle text-2xl'}>ゲンゴ</h3>
           <div className={'m-4 text-sm space-y-2'}>
+              <h3 className={'font-angle text-2xl'}>ゲンゴ</h3>
               <p>TypeScript</p>
               <p>Python</p>
           </div>
 
           <div className={'m-4 mb-8 text-xl'}>
-              <h2 className={'font-angle text-5xl'}>カンレン</h2>
+          <h2 className={'font-angle text-5xl'}>カンレン</h2>
           </div>
           <div className={'grid grid-cols-2 gap-x-2 gap-y-8 m-4 mb-24'}>
               <ProjectCard
