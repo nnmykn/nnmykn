@@ -67,7 +67,7 @@ export default function StoryPage() {
           </div>
           <div className={'m-4 text-sm space-y-2'}>
               <h3 className={'font-bold'}>2024年1月~:株式会社FP16を設立</h3>
-              <p>代表取締役社長兼COO（最高執行責任者）に就任</p>
+              <p>代表取締役社長兼COO(最高執行責任者)に就任</p>
               <p>株式会社ツクリエからの出資によって設立</p>
               <p>自社サービス開発や受託開発の事業を行います</p>
               <p>AIを使ったシステムの開発等も行っています</p>
