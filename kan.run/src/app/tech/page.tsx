@@ -4,7 +4,7 @@ export default function TechPage() {
   return (
     <Page>
       <div className={'m-4 text-xl'}>
-        <h2 className={'font-angle text-5xl'}>ギジュツ</h2>
+        <h2 className={'font-angle text-5xl'}>ギジュツ。</h2>
       </div>
       <div className={'m-4 text-sm space-y-2'}>
         <h3 className={'font-bold'}>概要</h3>
