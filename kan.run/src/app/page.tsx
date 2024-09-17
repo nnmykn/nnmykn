@@ -68,7 +68,7 @@ export default function Home() {
               <h2 className={'font-angle text-5xl'}>ケイレキ。</h2>
           </div>
           <LinkCard
-              title={'ケイレキ詳細'}
+              title={'経歴詳細'}
               description={'ニノミヤカンの経歴について。'}
               url={'/story'}
               urlForPreview={'https://www.kan.run/story'}
