@@ -1,4 +1,10 @@
 import Page from '@/client/components/page.tsx'
+import type {Metadata} from "next";
+
+export const metadata: Metadata = {
+    description: '扱うことの出来る技術について。 | 技術 | 二宮 貫(Kan Ninomiya)',
+    title: '技術 | 二宮 貫(Kan Ninomiya)',
+}
 
 export default function TechPage() {
   return (

@@ -1,5 +1,11 @@
 import Page from '@/client/components/page.tsx'
 import Link from "next/link";
+import type {Metadata} from "next";
+
+export const metadata: Metadata = {
+    description: 'ニノミヤカンの経歴について。 | 経歴 | 二宮 貫(Kan Ninomiya)',
+    title: '経歴 | 二宮 貫(Kan Ninomiya)',
+}
 
 export default function StoryPage() {
   return (
