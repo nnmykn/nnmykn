@@ -40,7 +40,7 @@ export default function Home() {
               <h2 className={'font-angle text-5xl'}>ギジュツ</h2>
           </div>
           <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-angle text-2xl'}>ゲンゴ</h3>
+              <h3 className={'font-bold'}>開発言語</h3>
               <p>TypeScript</p>
               <p>Python</p>
           </div>
