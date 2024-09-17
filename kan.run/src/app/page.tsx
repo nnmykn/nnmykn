@@ -71,6 +71,13 @@ export default function Home() {
                   tags={['IT', '悲しい']}
               />
               <ProjectCard
+                  title={'スキルシート'}
+                  url={'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'}
+                  urlForPreview={'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'}
+                  badgeText={'FP16のスキルシート！'}
+                  tags={['IT']}
+              />
+              <ProjectCard
                   title={'GitHub'}
                   url={'https://github.com/nnmykn'}
                   urlForPreview={'https://github.com/nnmykn'}
