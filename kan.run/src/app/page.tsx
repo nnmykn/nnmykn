@@ -102,6 +102,15 @@ export default function Home() {
                   tags={['IT', '悲しい']}
               />
               <ProjectCard
+                  title={'株式会社FP16 技術支援空きスケジュール表'}
+                  url={'https://schedule.fp16.co.jp/'}
+                  urlForPreview={
+                      'https://schedule.fp16.co.jp/'
+                  }
+                  badgeText={'技術支援します！'}
+                  tags={['IT']}
+              />
+              <ProjectCard
                   title={'スキルシート'}
                   url={
                       'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'
