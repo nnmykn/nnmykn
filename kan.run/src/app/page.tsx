@@ -62,7 +62,7 @@ export default function Home() {
               title={'技術詳細'}
               description={'扱うことの出来る技術について。'}
               url={'/tech'}
-              urlForPreview={'https://www.kan.run/tech'}
+              urlForPreview={'https://www.kan.run/tech/'}
           />
           <div className={'m-4 text-xl'}>
               <h2 className={'font-angle text-5xl'}>ケイレキ。</h2>
@@ -71,7 +71,7 @@ export default function Home() {
               title={'経歴詳細'}
               description={'ニノミヤカンの経歴について。'}
               url={'/story'}
-              urlForPreview={'https://www.kan.run/story'}
+              urlForPreview={'https://www.kan.run/story/'}
           />
 
           <div className={'m-4 mb-8 text-xl'}>
