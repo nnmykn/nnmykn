@@ -86,6 +86,17 @@ export default function Home() {
                   tags={['B2B事業', 'IT']}
               />
               <ProjectCard
+                  title={'スキルシート'}
+                  url={
+                      'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'
+                  }
+                  urlForPreview={
+                      'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'
+                  }
+                  badgeText={'スキルシートです！'}
+                  tags={['IT']}
+              />
+              <ProjectCard
                   title={'AIボイスクローン'}
                   url={'https://prtimes.jp/main/html/rd/p/000000001.000143111.html'}
                   urlForPreview={
@@ -108,17 +119,6 @@ export default function Home() {
                       'https://schedule.fp16.co.jp/'
                   }
                   badgeText={'技術支援します！'}
-                  tags={['IT']}
-              />
-              <ProjectCard
-                  title={'スキルシート'}
-                  url={
-                      'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'
-                  }
-                  urlForPreview={
-                      'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'
-                  }
-                  badgeText={'FP16のスキルシート！'}
                   tags={['IT']}
               />
               <ProjectCard
