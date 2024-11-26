@@ -1,3 +1,3 @@
 <p align="center">
-  (・_・;)＜[二宮とは](https://www.perplexity.ai/search/er-gong-guan-nituitejiao-etexi-dQaGb2CCRDWaaAXGQxGKHw)
+  (・_・;)＜<a href="https://www.perplexity.ai/search/er-gong-guan-nituitejiao-etexi-dQaGb2CCRDWaaAXGQxGKHw" target="_blank">二宮とは</a>
 </p>
