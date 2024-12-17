@@ -73,14 +73,43 @@ export default function StoryPage() {
           </div>
           <div className={'m-4 text-sm space-y-2'}>
               <h3 className={'font-bold'}>2024年1月~:株式会社FP16を設立</h3>
+              <p>2024年1月23日に設立</p>
               <p>代表取締役社長兼COO(最高執行責任者)に就任</p>
               <p>株式会社ツクリエからの出資によって設立</p>
               <p>自社サービス開発や受託開発の事業を行います</p>
               <p>AIを使ったシステムの開発等も行っています</p>
+              <p><Link href={'https://fp16.co.jp/'}
+                       target={"_blank"}>fp16.co.jp</Link>
+              </p>
           </div>
           <div className={'m-4 text-sm space-y-2'}>
               <h3 className={'font-bold'}>2024年3月:N高等学校を卒業</h3>
               <p>N高等学校を卒業</p>
+          </div>
+          <div className={'m-4 text-sm space-y-2'}>
+              <h3 className={'font-bold'}>2024年5月:「林修の今知りたいでしょ！」にAIボイスクローン・AIアバター生成の技術提供</h3>
+              <p>株式会社FP16で開発を進めている最新AI技術を用いて、林修先生そっくりの声と顔を生成
+              </p>
+              <p><Link href={'https://prtimes.jp/main/html/rd/p/000000001.000143111.html'}
+                       target={"_blank"}>PRTimes</Link>
+              </p>
+          </div>
+          <div className={'m-4 text-sm space-y-2'}>
+              <h3 className={'font-bold'}>2024年7月:Z世代向け音声SNSアプリ、「PEOPLE!」のウェイティングリストを公開</h3>
+              <p>toCサービス開発やシステム開発を行う株式会社FP16(エフピージュウロク)は、このたびZ世代向け音声SNSアプリ「PEOPLE!」のウェイティングリスト登録ページの公開・テスト運用を開始しました。
+              </p>
+              <p><Link href={'https://prtimes.jp/main/html/rd/p/000000002.000143111.html'}
+                       target={"_blank"}>PRTimes</Link>
+              </p>
+          </div>
+          <div className={'m-4 text-sm space-y-2'}>
+              <h3 className={'font-bold'}>2025年1月:合同会社OctoberElevenを設立</h3>
+              <p>2024年1月23日に設立</p>
+              <p>代表社員社長に就任</p>
+              <p>国外向けtoCサービス開発</p>
+              <p><Link href={'https://octobereleven.co.jp/'}
+                       target={"_blank"}>octobereleven.co.jp</Link>
+              </p>
           </div>
       </Page>
   )
