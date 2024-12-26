@@ -87,6 +87,17 @@ export default function Home() {
                     tags={['B2B事業', 'IT']}
                 />
                 <ProjectCard
+                    title={'永代供養きよらか'}
+                    url={
+                        'https://kiyo-raka.jp/'
+                    }
+                    urlForPreview={
+                        'https://kiyo-raka.jp/'
+                    }
+                    badgeText={'エンディング産業'}
+                    tags={['永代供養', '終活', 'エンディング産業']}
+                />
+                <ProjectCard
                     title={'FP16 スキルシート'}
                     url={
                         'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'
