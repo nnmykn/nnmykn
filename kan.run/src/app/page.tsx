@@ -134,18 +134,10 @@ export default function Home() {
                     tags={['IT']}
                 />
                 <ProjectCard
-                    title={'GitHub'}
-                    url={'https://github.com/nnmykn'}
-                    urlForPreview={'https://github.com/nnmykn'}
-                    badgeText={'Develop'}
-                    tags={['IT']}
-                />
-                <ProjectCard
-                    title={'Zenn'}
-                    url={'https://zenn.dev/nixo'}
-                    urlForPreview={'https://zenn.dev/nixo'}
-                    badgeText={'技術記事'}
-                    tags={['IT']}
+                    title={'Facebook'}
+                    url={'https://www.facebook.com/ninomiyakan/'}
+                    urlForPreview={'https://www.facebook.com/ninomiyakan/'}
+                    badgeText={'SNS'}
                 />
                 <ProjectCard
                     title={'X(Twitter)'}
@@ -158,6 +150,20 @@ export default function Home() {
                     url={'https://instagram.com/ninomiya.kan/'}
                     urlForPreview={'https://instagram.com/ninomiya.kan/'}
                     badgeText={'SNS'}
+                />
+                <ProjectCard
+                    title={'GitHub'}
+                    url={'https://github.com/nnmykn'}
+                    urlForPreview={'https://github.com/nnmykn'}
+                    badgeText={'Develop'}
+                    tags={['IT']}
+                />
+                <ProjectCard
+                    title={'Zenn'}
+                    url={'https://zenn.dev/nixo'}
+                    urlForPreview={'https://zenn.dev/nixo'}
+                    badgeText={'技術記事'}
+                    tags={['IT']}
                 />
                 <ProjectCard
                     title={'PEOPLE!'}
