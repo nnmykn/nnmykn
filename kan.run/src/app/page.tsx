@@ -3,6 +3,7 @@
 import LinkCard from '@/client/components/link-card.tsx'
 import Page from '@/client/components/page.tsx'
 import ProjectCard from '@/client/components/project-card.tsx'
+import { useLazyLoad } from '@/client/hooks/use-lazy-load'
 import { useEffect, useRef, useState } from 'react'
 import useSwr from 'swr'
 
@@ -26,7 +27,7 @@ function calculateRowLayout(
   containerWidth: number,
   targetRowHeight: number,
   spacing: number,
-  minImagesPerRow = 2,
+  minImagesPerRow = 3,
   maxImagesPerRow = 5,
 ): { rowHeight: number; items: ImageInfo[] }[] {
   const rows: { rowHeight: number; items: ImageInfo[] }[] = []
@@ -74,6 +75,32 @@ function calculateRowLayout(
   return rows
 }
 
+function LazyImage({
+  src,
+  alt,
+  width,
+  height,
+}: { src: string; alt: string; width: number; height: number }) {
+  const [ref, isIntersecting] = useLazyLoad()
+
+  return (
+    <div
+      ref={ref}
+      className="relative overflow-hidden rounded-lg"
+      style={{ width: `${width}px`, height: `${height}px` }}
+    >
+      {isIntersecting && (
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      )}
+    </div>
+  )
+}
+
 export default function Home() {
   const { data: images, error } = useSwr<ImageInfo[]>(
     '/memories/info.json',
@@ -91,8 +118,8 @@ export default function Home() {
 
     const updateLayout = () => {
       const containerWidth = containerRef.current?.offsetWidth ?? 0
-      const targetRowHeight = 200 // Adjusted for better fit
-      const spacing = 16 // Gap between images (matches gap-4)
+      const targetRowHeight = 200
+      const spacing = 16
 
       const newLayout = calculateRowLayout(
         images,
@@ -301,10 +328,12 @@ export default function Home() {
                   width: `${row.rowHeight * image.aspectRatio}px`,
                 }}
               >
-                <img
+                <LazyImage
+                  key={`${rowIndex}-${imageIndex}`}
                   src={`/memories/${image.name}`}
                   alt={`Memory - ${imageIndex + 1}`}
-                  className="w-full h-full object-cover"
+                  width={row.rowHeight * image.aspectRatio}
+                  height={row.rowHeight}
                 />
               </div>
             ))}
