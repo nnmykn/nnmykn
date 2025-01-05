@@ -78,7 +78,7 @@
     "node-fetch": "^3.3.2",
     "nookies": "^2.5.2",
     "openapi-fetch": "^0.11.3",
-    "postcss": "8.4.29",
+    "postcss": "8.4.31",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
