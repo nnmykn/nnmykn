@@ -2,7 +2,7 @@ const fs = require('node:fs')
 const path = require('node:path')
 const sharp = require('sharp')
 
-// ToDo: NGリストを作る
+const ngList = ['secret.jpg', 'private.png', 'confidential.jpeg']
 
 const directoryPath = path.join(process.cwd(), 'public', 'memories')
 const outputPath = path.join(process.cwd(), 'public', 'memories', 'info.json')
@@ -13,7 +13,10 @@ sharp.concurrency(1)
 try {
   const files = fs.readdirSync(directoryPath)
   const imagePromises = files
-    .filter((file: string) => /\.(jpg|jpeg|png|gif)$/i.test(file))
+    .filter(
+      (file: string) =>
+        /\.(jpg|jpeg|png|gif)$/i.test(file) && !ngList.includes(file),
+    )
     .map(async (file: string) => {
       try {
         const filePath = path.join(directoryPath, file)
