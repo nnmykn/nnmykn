@@ -6,12 +6,20 @@ import ProjectCard from '@/client/components/project-card.tsx'
 import { useEffect, useRef, useState } from 'react'
 import useSwr from 'swr'
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json())
-
 interface ImageInfo {
   name: string
   aspectRatio: number
+  date: string
 }
+
+const fetcher = (url: string) =>
+  fetch(url)
+    .then((res) => res.json())
+    .then((data: ImageInfo[]) =>
+      data.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+      ),
+    )
 
 function calculateRowLayout(
   images: ImageInfo[],
@@ -272,7 +280,7 @@ export default function Home() {
         {/*/>*/}
       </div>
       <div className={'m-4 text-xl'}>
-        <h2 className={'font-angle text-5xl'}>オモイデ。</h2>
+        <h2 className={'font-angle text-5xl'}>オモイデ。リアル。</h2>
       </div>
       <div ref={containerRef} className="p-4">
         {error && <div>Failed to load memories</div>}
@@ -294,8 +302,8 @@ export default function Home() {
                 }}
               >
                 <img
-                  src={`/memories/india-2025/${image.name}`}
-                  alt={`Memory from India 2025 - ${imageIndex + 1}`}
+                  src={`/memories/${image.name}`}
+                  alt={`Memory - ${imageIndex + 1}`}
                   className="w-full h-full object-cover"
                 />
               </div>
