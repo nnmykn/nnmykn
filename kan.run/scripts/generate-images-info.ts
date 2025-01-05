@@ -2,6 +2,8 @@ const fs = require('node:fs')
 const path = require('node:path')
 const sharp = require('sharp')
 
+// ToDo: NGリストを作る
+
 const directoryPath = path.join(
     process.cwd(),
     'public',
