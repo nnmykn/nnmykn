@@ -306,7 +306,7 @@ export default function Home() {
         {/*  tags={['成人向け', 'toC']}*/}
         {/*/>*/}
       </div>
-      <div className={'m-4 text-xl'}>
+      {/* <div className={'m-4 text-xl'}>
         <h2 className={'font-angle text-5xl'}>オモイデ。リアル。</h2>
       </div>
       <div ref={containerRef} className="p-4">
@@ -339,7 +339,7 @@ export default function Home() {
             ))}
           </div>
         ))}
-      </div>
+      </div> */}
     </Page>
   )
 }
