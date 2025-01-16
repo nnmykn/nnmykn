@@ -102,7 +102,7 @@ export default function StoryPage() {
                        target={"_blank"}>PRTimes</Link>
               </p>
           </div>
-          <div className={'m-4 text-sm space-y-2'}>
+          {/* <div className={'m-4 text-sm space-y-2'}>
               <h3 className={'font-bold'}>2025年1月:合同会社OctoberElevenを設立</h3>
               <p>2024年1月23日に設立</p>
               <p>代表社員社長に就任</p>
@@ -110,7 +110,7 @@ export default function StoryPage() {
               <p><Link href={'https://octobereleven.co.jp/'}
                        target={"_blank"}>octobereleven.co.jp</Link>
               </p>
-          </div>
+          </div> */}
       </Page>
   )
 }

@@ -157,7 +157,6 @@ export default function Home() {
         <h2 className={'font-angle text-5xl'}>シゴト。</h2>
       </div>
       <div className={'m-4 text-sm space-y-2'}>
-        <p>【合同会社OctoberEleven 代表社員社長兼COO】2025.01~</p>
         <p>【株式会社FP16 代表取締役社長兼COO】2024.01~</p>
         <p>【株式会社ツクリエ エンジニア】2023.07~</p>
         <p>【株式会社stak PR・エンジニア】2022.10~2023.06</p>
