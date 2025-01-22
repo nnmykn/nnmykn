@@ -218,11 +218,18 @@ export default function Home() {
           tags={['B2B事業', 'IT']}
         />
         <ProjectCard
+          title={'ペイペコ'}
+          url={'https://paypeko.com/'}
+          urlForPreview={'https://paypeko.com/'}
+          badgeText={'自社サービス'}
+          tags={['FP16', 'toC', '性', '投げ銭']}
+        />
+        <ProjectCard
           title={'永代供養きよらか'}
           url={'https://kiyo-raka.jp/'}
           urlForPreview={'https://kiyo-raka.jp/'}
-          badgeText={'エンディング産業'}
-          tags={['永代供養', '終活', 'エンディング産業']}
+          badgeText={'自社サービス'}
+          tags={['FP16', '永代供養', '終活', 'エンディング産業']}
         />
         <ProjectCard
           title={'FP16 スキルシート'}
