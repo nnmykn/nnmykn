@@ -239,6 +239,13 @@ export default function Home() {
           tags={['FP16', '永代供養', '終活', 'エンディング産業']}
         />
         <ProjectCard
+          title={'PEOPLE!'}
+          url={'https://ppl.fan/'}
+          urlForPreview={'https://ppl.fan/'}
+          badgeText={'自社サービス'}
+          tags={['FP16', 'toC', 'Z世代']}
+        />
+        <ProjectCard
           title={'FP16 スキルシート'}
           url={
             'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'
@@ -273,21 +280,9 @@ export default function Home() {
           tags={['IT']}
         />
         <ProjectCard
-          title={'Facebook'}
-          url={'https://www.facebook.com/ninomiyakan/'}
-          urlForPreview={'https://www.facebook.com/ninomiyakan/'}
-          badgeText={'SNS'}
-        />
-        <ProjectCard
           title={'X(Twitter)'}
           url={'https://x.com/Ninomiyarun'}
           urlForPreview={'https://x.com/Ninomiyarun'}
-          badgeText={'SNS'}
-        />
-        <ProjectCard
-          title={'Instagram'}
-          url={'https://instagram.com/ninomiya.kan/'}
-          urlForPreview={'https://instagram.com/ninomiya.kan/'}
           badgeText={'SNS'}
         />
         <ProjectCard
@@ -303,13 +298,6 @@ export default function Home() {
           urlForPreview={'https://zenn.dev/nixo'}
           badgeText={'技術記事'}
           tags={['IT']}
-        />
-        <ProjectCard
-          title={'PEOPLE!'}
-          url={'https://ppl.fan/'}
-          urlForPreview={'https://ppl.fan/'}
-          badgeText={'Z世代！'}
-          tags={['toC', '自社サービス']}
         />
         {/*<ProjectCard*/}
         {/*  title={'エロイスト'}*/}
