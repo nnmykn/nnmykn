@@ -17,8 +17,8 @@ const angle = localFont({
 })
 
 export const metadata: Metadata = {
-  description: '二宮 貫(Kan Ninomiya)',
-  title: '二宮 貫(Kan Ninomiya)',
+  description: 'ニノミヤカンについての情報がまとめられているウェブサイトです。',
+  title: '二宮 貫 | Kan Ninomiya | ニノミヤ カン | にのみや かん',
 }
 
 export default function RootLayout({

@@ -2,7 +2,7 @@ import Page from '@/client/components/page.tsx'
 import type {Metadata} from "next";
 
 export const metadata: Metadata = {
-    description: '扱うことの出来る技術について。 | 技術 | 二宮 貫(Kan Ninomiya)',
+    description: 'ニノミヤカンが扱うことの出来る技術について。 | 技術 | 二宮 貫(Kan Ninomiya)',
     title: '技術 | 二宮 貫(Kan Ninomiya)',
 }
 
@@ -14,7 +14,7 @@ export default function TechPage() {
       </div>
       <div className={'m-4 text-sm space-y-2'}>
         <h3 className={'font-bold'}>概要</h3>
-        <p>フロントエンド開発 / バックエンド開発 / AIサービス開発</p>
+        <p>フロントエンド開発 / バックエンド開発 / LLMサービス開発 / AIモデル開発</p>
       </div>
       <div className={'m-4 text-sm space-y-2'}>
         <h3 className={'font-bold'}>開発言語</h3>
@@ -49,11 +49,13 @@ export default function TechPage() {
       </div>
       <div className={'m-4 text-sm space-y-2'}>
         <h3 className={'font-bold'}>クラウドプラットフォーム</h3>
+        <p>Cloudflare</p>
+        <p>fly.io</p>
         <p>AWS</p>
         <p>GCP</p>
         <p>Supabase</p>
-        <p>Cloudflare</p>
         <p>Vercel</p>
+        <p>Vultr</p>
       </div>
       <div className={'m-4 text-sm space-y-2'}>
         <h3 className={'font-bold'}>DevOps・インフラ</h3>
@@ -82,6 +84,7 @@ export default function TechPage() {
         <p>Backlog</p>
         <p>Linear</p>
         <p>Asana</p>
+        <p>Github Projects</p>
       </div>
 
       <div className={'m-4 text-sm space-y-2'}>
@@ -94,6 +97,7 @@ export default function TechPage() {
         <p>Whisper</p>
         <p>TensorFlow</p>
         <p>YOLO</p>
+        <p>OpenAI</p>
       </div>
     </Page>
   )

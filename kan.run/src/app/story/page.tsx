@@ -7,110 +7,76 @@ export const metadata: Metadata = {
     title: '経歴 | 二宮 貫(Kan Ninomiya)',
 }
 
+const careerData = [
+    {
+      period: "2005年10月~2012年3月",
+      title: "赤ちゃん&幼稚園児",
+      details: ["幼稚園の頃からパソコンで遊んでいました"],
+    },
+    {
+      period: "2012年4月~2018年3月",
+      title: "広島市立尾長小学校",
+      details: ["生徒会の執行委員をしていました", "幼稚園から小学5年生まで府中中央剣道クラブで剣道をしていました"],
+    },
+    {
+      period: "2018年4月~2021年3月",
+      title: "広島市立二葉中学校",
+      details: [
+        "中学1年生でAcerの自分のノートパソコンを手に入れました",
+        "ブロッチェーンやAIをPythonで触っていました",
+        "中学2年生でハイエンドデスクトップを手に入れました",
+        "小学5年生から中学2年まではテニスをしていました",
+      ],
+    },
+    {
+      period: "2021年4月~2024年3月",
+      title: "N高等学校",
+      details: [
+        "やりたいことは決まってたのでN高に入学しました",
+        "1年生の頃から事業考えて、開発してを繰り返していました",
+        "1年生の頃はマックでバイトしながら様々なIT分野に手を出していました",
+        "N高情報サイトを入学を考えてる方、保護者向けにウェブメディアを運営していました",
+        "N高情報Bookを生徒向けにGitbookベースで運営していました",
+        "Minecraftのサーバー開発コミュニティの発足を行いました(現在は運営を引き継いで貰っています。)",
+        "Javaエンジニアやマネジメントを行ってくれるメンバーを約100名集めました",
+        'このコミュニティでは日本版のHypixelを開発しています(<Link href="https://github.com/Pixelsia" target="_blank">GitHub</Link>)',
+      ],
+    },
+  ]
+
+interface CareerItemProps {
+    period: string
+    title: string
+    details: string[]
+  }
+  
+  export function CareerItem({ period, title, details }: CareerItemProps) {
+    return (
+      <div className="border-l-4 border-gray-200 pl-4 py-2">
+        <h3 className="font-bold text-lg mb-2">
+          {period}: {title}
+        </h3>
+        <ul className="space-y-2 text-sm">
+          {details.map((detail, index) => (
+            <li key={index} dangerouslySetInnerHTML={{ __html: detail }} />
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  
+
 export default function StoryPage() {
   return (
       <Page>
           <div className={'m-4 text-xl'}>
               <h2 className={'font-angle text-5xl'}>ケイレキ。</h2>
           </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2005年10月~2012年3月:赤ちゃん&幼稚園児</h3>
-              <p>幼稚園の頃からパソコンで遊んでいました</p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2012年4月~2018年3月:広島市立尾長小学校</h3>
-              <p>生徒会の執行委員をしていました</p>
-              <p>幼稚園から小学5年生まで府中中央剣道クラブで剣道をしていました</p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2018年4月~2021年3月:広島市立二葉中学校</h3>
-              <p>中学1年生でAcerの自分のノートパソコンを手に入れました</p>
-              <p>ブロッチェーンやAIをPythonで触っていました</p>
-              <p>中学2年生でハイエンドデスクトップを手に入れました</p>
-              <p>小学5年生から中学2年まではテニスをしていました</p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2021年4月~2024年3月:N高等学校</h3>
-              <p>やりたいことは決まってたのでN高に入学しました</p>
-              <p>1年生の頃から事業考えて、開発してを繰り返していました</p>
-              <p>1年生の頃はマックでバイトしながら様々なIT分野に手を出していました</p>
-              <p>N高情報サイトを入学を考えてる方、保護者向けにウェブメディアを運営していました</p>
-              <p>N高情報Bookを生徒向けにGitbookベースで運営していました</p>
-              <p>Minecraftのサーバー開発コミュニティの発足を行いました(現在は運営を引き継いで貰っています。)</p>
-              <p>Javaエンジニアやマネジメントを行ってくれるメンバーを約100名集めました</p>
-              <p>このコミュニティでは日本版のHypixelを開発しています(<Link href={'https://github.com/Pixelsia'}
-                                                                           target={"_blank"}>GitHub</Link>)</p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2022年4月~2022年9月:オーストラリア・ブリスベン</h3>
-              <p>YesとNoしか言えない状態、WhatとWhyの違いもわからない状態でオーストラリアに留学しました</p>
-              <p>昼は6時起きで学校や友達と英語を勉強、夜は午前2時までRouteXとして事業計画を作ったりサービス開発を行っていました</p>
-              <p>司法処理業務をITで代替し、一人で道路使用許可や飲食店の営業許可を取ることが出来るSmartAcceptを開発</p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2022年10月~2023年6月:株式会社stak</h3>
-              <p>SNSマーケティングやeスポーツ大会(参加者100~200人規模)、AIチャットの開発(ユーザー1万人以上)、動画編集を行っていました</p>
-              <p>自動化ツールの開発なども行っていました</p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2022年10月:AIチャットボット「Lina」を開発</h3>
-              <p>アカウント(<Link href={'https://liff.line.me/1645278921-kWRPP32q/?accountId=610jtrek'}
-                                  target={"_blank"}>https://liff.line.me/1645278921-kWRPP32q/?accountId=610jtrek</Link>)
-              </p>
-              <p>LINEでChatGPTを使うことの出来るチャットボットを開発(友達数は10,000人以上)</p>
-              <p>その後株式会社stakに譲渡しました</p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2023年6月~2024年1月:supersonarとして受託開発を開始</h3>
-              <p><Link href={'supersonar.jp'}
-                       target={"_blank"}>supersonar.jp</Link>
-              </p>
-              <p>デジタル領域の事業を行っていました</p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2023年7月~:株式会社ツクリエに入社</h3>
-              <p>AIを使ったサービス開発を軸に、フロントエンドとバックエンドの開発を行っています</p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2024年1月~:株式会社FP16を設立</h3>
-              <p>2024年1月23日に設立</p>
-              <p>代表取締役社長兼COO(最高執行責任者)に就任</p>
-              <p>株式会社ツクリエからの出資によって設立</p>
-              <p>自社サービス開発や受託開発の事業を行います</p>
-              <p>AIを使ったシステムの開発等も行っています</p>
-              <p><Link href={'https://fp16.co.jp/'}
-                       target={"_blank"}>fp16.co.jp</Link>
-              </p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2024年3月:N高等学校を卒業</h3>
-              <p>N高等学校を卒業</p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2024年5月:「林修の今知りたいでしょ！」にAIボイスクローン・AIアバター生成の技術提供</h3>
-              <p>株式会社FP16で開発を進めている最新AI技術を用いて、林修先生そっくりの声と顔を生成
-              </p>
-              <p><Link href={'https://prtimes.jp/main/html/rd/p/000000001.000143111.html'}
-                       target={"_blank"}>PRTimes</Link>
-              </p>
-          </div>
-          <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2024年7月:Z世代向け音声SNSアプリ、「PEOPLE!」のウェイティングリストを公開</h3>
-              <p>toCサービス開発やシステム開発を行う株式会社FP16(エフピージュウロク)は、このたびZ世代向け音声SNSアプリ「PEOPLE!」のウェイティングリスト登録ページの公開・テスト運用を開始しました。
-              </p>
-              <p><Link href={'https://prtimes.jp/main/html/rd/p/000000002.000143111.html'}
-                       target={"_blank"}>PRTimes</Link>
-              </p>
-          </div>
-          {/* <div className={'m-4 text-sm space-y-2'}>
-              <h3 className={'font-bold'}>2025年1月:合同会社OctoberElevenを設立</h3>
-              <p>2024年1月23日に設立</p>
-              <p>代表社員社長に就任</p>
-              <p>国外向けtoCサービス開発</p>
-              <p><Link href={'https://octobereleven.co.jp/'}
-                       target={"_blank"}>octobereleven.co.jp</Link>
-              </p>
-          </div> */}
+          <div className="space-y-8">
+          {careerData.map((item, index) => (
+            <CareerItem key={index} {...item} />
+          ))}
+        </div>
       </Page>
   )
 }
