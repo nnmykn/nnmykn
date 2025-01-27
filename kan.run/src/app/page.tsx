@@ -215,7 +215,14 @@ export default function Home() {
           url={'https://fp16.co.jp/'}
           urlForPreview={'https://fp16.co.jp/'}
           badgeText={'代表取締役社長'}
-          tags={['B2B事業', 'IT']}
+          tags={['B2B事業', 'B2C事業', 'IT']}
+        />
+        <ProjectCard
+          title={'株式会社FP16(Wantedly)'}
+          url={'https://www.wantedly.com/companies/fp16'}
+          urlForPreview={'https://www.wantedly.com/companies/fp16'}
+          badgeText={'求人はこちら！'}
+          tags={['B2B事業', 'B2C事業', 'IT']}
         />
         <ProjectCard
           title={'ペイペコ'}
