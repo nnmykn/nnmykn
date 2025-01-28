@@ -245,6 +245,13 @@ export default function Home() {
           badgeText={'自社サービス'}
           tags={['FP16', 'toC', 'Z世代']}
         />
+        {/*<ProjectCard*/}
+        {/*  title={'エロイスト'}*/}
+        {/*  url={'https://ero.ist/'}*/}
+        {/*  urlForPreview={'https://ero.ist/'}*/}
+        {/*  badgeText={'運営中'}*/}
+        {/*  tags={['成人向け', 'toC']}*/}
+        {/*/>*/}
         <ProjectCard
           title={'FP16 スキルシート'}
           url={
@@ -299,16 +306,9 @@ export default function Home() {
           badgeText={'技術記事'}
           tags={['IT']}
         />
-        {/*<ProjectCard*/}
-        {/*  title={'エロイスト'}*/}
-        {/*  url={'https://ero.ist/'}*/}
-        {/*  urlForPreview={'https://ero.ist/'}*/}
-        {/*  badgeText={'運営中'}*/}
-        {/*  tags={['成人向け', 'toC']}*/}
-        {/*/>*/}
       </div>
-      {/* <div className={'m-4 text-xl'}>
-        <h2 className={'font-angle text-5xl'}>オモイデ。リアル。</h2>
+      <div className={'m-4 text-xl'}>
+        <h2 className={'font-angle text-5xl'}>シャシン。</h2>
       </div>
       <div ref={containerRef} className="p-4">
         {error && <div>Failed to load memories</div>}
@@ -340,7 +340,7 @@ export default function Home() {
             ))}
           </div>
         ))}
-      </div> */}
+      </div>
     </Page>
   )
 }
