@@ -252,6 +252,20 @@ export default function Home() {
         {/*  badgeText={'運営中'}*/}
         {/*  tags={['成人向け', 'toC']}*/}
         {/*/>*/}
+        {/* <ProjectCard
+          title={'NyanNyanClub株式会社'}
+          url={'https://nyan-nyan-club.com/'}
+          urlForPreview={'https://nyan-nyan-club.com/'}
+          badgeText={'代表取締役社長'}
+          tags={['BtoC事業', '国外', 'IT']}
+        />
+        <ProjectCard
+          title={'Chinon from Japan'}
+          url={'https://x.com/chinonsan'}
+          urlForPreview={'https://x.com/chinonsan'}
+          badgeText={'NyanNyanClub'}
+          tags={['toC', '国外']}
+        /> */}
         <ProjectCard
           title={'FP16 スキルシート'}
           url={
