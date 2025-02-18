@@ -356,40 +356,40 @@ export default function Home() {
           />
         ))}
       </div>
-      <div className={'m-4 text-xl'}>
-        <h2 className={'font-angle text-5xl'}>シャシン。</h2>
-      </div>
-      <div ref={containerRef} className="p-4">
-        {error && <div>Failed to load memories</div>}
-        {!images && <div>Loading...</div>}
-        {layout.map((row, rowIndex) => (
-          <div
-            key={rowIndex}
-            className="flex gap-4 mb-4"
-            style={{
-              height: row.rowHeight,
-            }}
-          >
-            {row.items.map((image, imageIndex) => (
-              <div
-                key={`${rowIndex}-${imageIndex}`}
-                className="relative overflow-hidden rounded-lg"
-                style={{
-                  width: `${row.rowHeight * image.aspectRatio}px`,
-                }}
-              >
-                <LazyImage
-                  key={`${rowIndex}-${imageIndex}`}
-                  src={`/memories/${image.name}`}
-                  alt={`Memory - ${imageIndex + 1}`}
-                  width={row.rowHeight * image.aspectRatio}
-                  height={row.rowHeight}
-                />
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+      {/*<div className={'m-4 text-xl'}>*/}
+      {/*  <h2 className={'font-angle text-5xl'}>シャシン。</h2>*/}
+      {/*</div>*/}
+      {/*<div ref={containerRef} className="p-4">*/}
+      {/*  {error && <div>Failed to load memories</div>}*/}
+      {/*  {!images && <div>Loading...</div>}*/}
+      {/*  {layout.map((row, rowIndex) => (*/}
+      {/*    <div*/}
+      {/*      key={rowIndex}*/}
+      {/*      className="flex gap-4 mb-4"*/}
+      {/*      style={{*/}
+      {/*        height: row.rowHeight,*/}
+      {/*      }}*/}
+      {/*    >*/}
+      {/*      {row.items.map((image, imageIndex) => (*/}
+      {/*        <div*/}
+      {/*          key={`${rowIndex}-${imageIndex}`}*/}
+      {/*          className="relative overflow-hidden rounded-lg"*/}
+      {/*          style={{*/}
+      {/*            width: `${row.rowHeight * image.aspectRatio}px`,*/}
+      {/*          }}*/}
+      {/*        >*/}
+      {/*          <LazyImage*/}
+      {/*            key={`${rowIndex}-${imageIndex}`}*/}
+      {/*            src={`/memories/${image.name}`}*/}
+      {/*            alt={`Memory - ${imageIndex + 1}`}*/}
+      {/*            width={row.rowHeight * image.aspectRatio}*/}
+      {/*            height={row.rowHeight}*/}
+      {/*          />*/}
+      {/*        </div>*/}
+      {/*      ))}*/}
+      {/*    </div>*/}
+      {/*  ))}*/}
+      {/*</div>*/}
     </Page>
   )
 }
