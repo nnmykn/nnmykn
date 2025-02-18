@@ -273,36 +273,34 @@ export default function Home() {
       </div>
       <div className={'m-4 text-sm space-y-2'}>
         <p>
-          🆕 2025 年 2
+          2025 年 2
           月に「ペイペコ」をリリースしました！(https://app.pay-peko.com/)
         </p>
         <p>
-          🆕 2025 年 1
+          2025 年 1
           月に「永代供養きよらか」をリリースしました！(https://kiyo-raka.jp/)
         </p>
         <p>
-          🆕 2024 年 8
+          2024 年 8
           月に株式会社FP16でフロントエンド開発支援事業を開始しました！(https://fp16.co.jp/schedule)
         </p>
         <p>
-          🆕 2024 年 7
+          2024 年 7
           月にN高から個人情報が流出しました！(https://www.youtube.com/watch?v=FW0apofJoRc)
         </p>
         <p>
-          🆕 2024 年 7
+          2024 年 7
           月にZ世代向け音声SNSアプリ「PEOPLE!」のウェイティングリストを公開しました！(https://ppl.fan/)
         </p>
         <p>
-          🆕 2024 年 5
+          2024 年 5
           月にゴールデンタイム番組である「林修の今知りたいでしょ！」にAI技術を提供して出ました！(https://prtimes.jp/main/html/rd/p/000000001.000143111.html)
         </p>
-        <p>🆕 2024年 4 月にロードスターを買いました！(7 月末納車予定)</p>
-        <p>
-          🆕 2024年 4 月に computer-1 というケースでイケてる PC を作りました！
-        </p>
-        <p>🆕 2024 年 4 月に遂に自分で焼かない焼き肉を食べました！</p>
-        <p>🆕 2024 年 4 月に遂に回らない寿司を食べました！</p>
-        <p>🆕 2024 年 3 月に N 高等学校を卒業しました！</p>
+        <p>2024年 4 月にロードスターを買いました！(7 月末納車予定)</p>
+        <p>2024年 4 月に computer-1 というケースでイケてる PC を作りました！</p>
+        <p>2024 年 4 月に遂に自分で焼かない焼き肉を食べました！</p>
+        <p>2024 年 4 月に遂に回らない寿司を食べました！</p>
+        <p>2024 年 3 月に N 高等学校を卒業しました！</p>
       </div>
 
       <div className={'m-4 text-xl'}>
@@ -379,25 +377,25 @@ export default function Home() {
         <h2 className={'font-angle text-5xl'}>ケイレキ。</h2>
       </div>
       <LinkCard
-          title={'経歴詳細'}
-          description={'ニノミヤカンの経歴について。'}
-          url={'/story'}
-          urlForPreview={'https://www.kan.run/story/'}
+        title={'経歴詳細'}
+        description={'ニノミヤカンの経歴について。'}
+        url={'/story'}
+        urlForPreview={'https://www.kan.run/story/'}
       />
       <div className={'m-4 text-xl'}>
         <h2 className={'font-angle text-5xl'}>ドキュメント。</h2>
       </div>
       <LinkCard
-          title={'株式会社FP16に興味を持った方へ(個人向け)'}
-          description={'株式会社FP16の社風などについて。'}
-          url={'/fp16-individual'}
-          urlForPreview={'https://www.kan.run/fp16-individual/'}
+        title={'株式会社FP16に興味を持った方へ(個人向け)'}
+        description={'株式会社FP16の社風などについて。'}
+        url={'/fp16-individual'}
+        urlForPreview={'https://www.kan.run/fp16-individual/'}
       />
       <LinkCard
-          title={'株式会社FP16に興味を持った方へ(企業向け)'}
-          description={'株式会社FP16の技術スタックやプロダクトについて。'}
-          url={'/fp16-corporate'}
-          urlForPreview={'https://www.kan.run/fp16-corporate/'}
+        title={'株式会社FP16に興味を持った方へ(企業向け)'}
+        description={'株式会社FP16の技術スタックやプロダクトについて。'}
+        url={'/fp16-corporate'}
+        urlForPreview={'https://www.kan.run/fp16-corporate/'}
       />
 
       <div className={'m-4 mb-8 text-xl'}>
