@@ -273,6 +273,26 @@ export default function Home() {
       </div>
       <div className={'m-4 text-sm space-y-2'}>
         <p>
+          🆕 2025 年 2
+          月に「ペイペコ」をリリースしました！(https://app.pay-peko.com/)
+        </p>
+        <p>
+          🆕 2025 年 1
+          月に「永代供養きよらか」をリリースしました！(https://kiyo-raka.jp/)
+        </p>
+        <p>
+          🆕 2024 年 8
+          月に株式会社FP16でフロントエンド開発支援事業を開始しました！(https://fp16.co.jp/schedule)
+        </p>
+        <p>
+          🆕 2024 年 7
+          月にN高から個人情報が流出しました！(https://www.youtube.com/watch?v=FW0apofJoRc)
+        </p>
+        <p>
+          🆕 2024 年 7
+          月にZ世代向け音声SNSアプリ「PEOPLE!」のウェイティングリストを公開しました！(https://ppl.fan/)
+        </p>
+        <p>
           🆕 2024 年 5
           月にゴールデンタイム番組である「林修の今知りたいでしょ！」にAI技術を提供して出ました！(https://prtimes.jp/main/html/rd/p/000000001.000143111.html)
         </p>
