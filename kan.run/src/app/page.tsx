@@ -118,11 +118,11 @@ const PROJECT_CARDS: ProjectCardData[] = [
     tags: ['B2B事業', 'B2C事業', 'IT'],
   },
   {
-    title: '株式会社FP16(indeed)',
-    url: 'https://jp.indeed.com/viewjob?jk=b83374903faa76df&from=shareddesktop',
+    title: '株式会社FP16 求人ページ',
+    url: 'https://fp16.co.jp/recruit',
     urlForPreview:
-      'https://jp.indeed.com/viewjob?jk=b83374903faa76df&from=shareddesktop',
-    badgeText: '求人はこちら！',
+      'https://fp16.co.jp/recruit',
+    badgeText: '微経験エンジニア求人 2/10',
     tags: ['B2B事業', 'B2C事業', 'IT'],
   },
   {
