@@ -225,6 +225,13 @@ export default function Home() {
           tags={['B2B事業', 'B2C事業', 'IT']}
         />
         <ProjectCard
+          title={'株式会社FP16(indeed)'}
+          url={'https://jp.indeed.com/viewjob?jk=b83374903faa76df&from=shareddesktop'}
+          urlForPreview={'https://jp.indeed.com/viewjob?jk=b83374903faa76df&from=shareddesktop'}
+          badgeText={'求人はこちら！'}
+          tags={['B2B事業', 'B2C事業', 'IT']}
+        />
+        <ProjectCard
           title={'ペイペコ'}
           url={'https://paypeko.com/'}
           urlForPreview={'https://paypeko.com/'}
