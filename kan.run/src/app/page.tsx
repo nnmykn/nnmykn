@@ -269,6 +269,23 @@ export default function Home() {
   return (
     <Page>
       <div className={'m-4 text-xl'}>
+        <h2 className={'font-angle text-5xl'}>ニュース。</h2>
+      </div>
+      <div className={'m-4 text-sm space-y-2'}>
+        <p>
+          🆕 2024 年 5
+          月にゴールデンタイム番組である「林修の今知りたいでしょ！」にAI技術を提供して出ました！(https://prtimes.jp/main/html/rd/p/000000001.000143111.html)
+        </p>
+        <p>🆕 2024年 4 月にロードスターを買いました！(7 月末納車予定)</p>
+        <p>
+          🆕 2024年 4 月に computer-1 というケースでイケてる PC を作りました！
+        </p>
+        <p>🆕 2024 年 4 月に遂に自分で焼かない焼き肉を食べました！</p>
+        <p>🆕 2024 年 4 月に遂に回らない寿司を食べました！</p>
+        <p>🆕 2024 年 3 月に N 高等学校を卒業しました！</p>
+      </div>
+
+      <div className={'m-4 text-xl'}>
         <h2 className={'font-angle text-5xl'}>ナニ？</h2>
       </div>
       <div className={'m-4 text-sm space-y-2'}>
