@@ -1,4 +1,5 @@
 import { Toaster } from '@/client/components/ui/sonner'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 import localFont from 'next/font/local'
@@ -28,6 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang={'ja'}>
+      <GoogleAnalytics gaId="G-CNG87YNFC1" />
       <body className={`${font.variable} ${angle.variable}`}>
         <div className="mx-auto w-full max-w-[500px] shadow-xl min-h-screen overflow-x-hidden">
           {children}
