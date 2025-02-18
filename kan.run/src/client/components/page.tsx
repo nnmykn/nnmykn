@@ -1,3 +1,4 @@
+import { SpotifyDrawer } from '@/client/components/spotify-drawer.tsx'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 
@@ -9,11 +10,13 @@ export default function Page({ children }: Props) {
   return (
     <div>
       <div className={'space-y-4'}>
-        <Link href={'/'}>
-          <h1 className={'font-angle text-7xl text-center my-32'}>
-            ニノミヤ カン。
-          </h1>
-        </Link>
+        <SpotifyDrawer
+          trigger={
+            <h1 className={'font-angle text-7xl text-center my-32'}>
+              ニノミヤ カン。
+            </h1>
+          }
+        />
       </div>
       <div>{children}</div>
       <div className={'space-y-4'}>
