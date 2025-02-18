@@ -10,10 +10,15 @@ const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null
 
   return (
-    <div className="fixed bottom-4 right-4 w-96 h-[600px] bg-white rounded-lg shadow-xl z-50 flex flex-col">
-      <div className="flex justify-between items-center p-4 border-b">
-        <h2 className="text-lg font-semibold">AIニノミヤくん</h2>
-        <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+    <div className="fixed inset-0 sm:bottom-4 sm:right-4 sm:inset-auto w-full sm:w-96 h-full sm:h-[600px] bg-white sm:rounded-lg shadow-xl z-50 flex flex-col overflow-hidden">
+      <div className="flex justify-between items-center p-6 sm:p-4 bg-gray-100 border-b">
+        <h2 className="text-xl sm:text-lg font-semibold text-gray-800">
+          AIニノミヤくん
+        </h2>
+        <button
+          onClick={onClose}
+          className="text-gray-500 hover:text-gray-700 transition-colors"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
