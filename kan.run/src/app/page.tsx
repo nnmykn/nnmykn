@@ -129,7 +129,7 @@ const PROJECT_CARDS: ProjectCardData[] = [
     title: '株式会社FP16(Wantedly)',
     url: 'https://www.wantedly.com/companies/fp16',
     urlForPreview: 'https://www.wantedly.com/companies/fp16',
-    badgeText: '求人はこちら！',
+    badgeText: 'Wantedlyはこちら！',
     tags: ['B2B事業', 'B2C事業', 'IT'],
   },
   {
