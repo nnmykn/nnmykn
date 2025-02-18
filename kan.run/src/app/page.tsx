@@ -232,6 +232,13 @@ export default function Home() {
           tags={['B2B事業', 'B2C事業', 'IT']}
         />
         <ProjectCard
+          title={'Reactひろしま'}
+          url={'https://react-hiroshima.connpass.com/'}
+          urlForPreview={'https://react-hiroshima.connpass.com/'}
+          badgeText={'勉強会やってます！'}
+          tags={['株式会社FP16', 'IT']}
+        />
+        <ProjectCard
           title={'ペイペコ'}
           url={'https://paypeko.com/'}
           urlForPreview={'https://paypeko.com/'}
