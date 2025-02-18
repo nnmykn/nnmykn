@@ -3,6 +3,7 @@
 import LinkCard from '@/client/components/link-card.tsx'
 import Page from '@/client/components/page.tsx'
 import ProjectCard from '@/client/components/project-card.tsx'
+import { SpotifyDrawer } from '@/client/components/spotify-drawer.tsx'
 import { useLazyLoad } from '@/client/hooks/use-lazy-load'
 import { useEffect, useRef, useState } from 'react'
 import useSwr from 'swr'
@@ -280,7 +281,11 @@ export default function Home() {
         <p>
           AIを活用したサービス開発に早期から着手し、2022年10月にLINEで使用可能なAIチャットボット「Lina(現在の友達数は1万人以上)」を開発し、事業譲渡を行ったのち株式会社FP16を共同創業。(2024年1月23日時点)
         </p>
-        <h3 className={'text-right font-angle text-4xl'}>ニノミヤ カン</h3>
+        <SpotifyDrawer
+          trigger={
+            <h3 className={'text-right font-angle text-4xl'}>ニノミヤ カン</h3>
+          }
+        />
       </div>
 
       <div className={'m-4 text-xl'}>
