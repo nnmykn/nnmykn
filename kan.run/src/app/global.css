@@ -72,11 +72,8 @@
     /*noinspection CssUnresolvedCustomProperty*/
     font-family: var(--font-noto-sans-jp), sans-serif;
   }
+
   body {
     @apply bg-background text-foreground;
-  }
-
-  a {
-    color: #1a0dab;
   }
 }
