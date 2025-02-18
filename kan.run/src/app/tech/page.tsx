@@ -49,7 +49,15 @@ const TECH_CATEGORIES: TechCategory[] = [
   },
   {
     title: 'クラウドプラットフォーム',
-    items: ['Cloudflare', 'fly.io', 'AWS', 'GCP', 'Supabase', 'Vercel', 'Vultr'],
+    items: [
+      'Cloudflare',
+      'fly.io',
+      'AWS',
+      'GCP',
+      'Supabase',
+      'Vercel',
+      'Vultr',
+    ],
   },
   {
     title: 'DevOps・インフラ',

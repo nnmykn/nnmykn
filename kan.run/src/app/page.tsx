@@ -120,7 +120,8 @@ const PROJECT_CARDS: ProjectCardData[] = [
   {
     title: '株式会社FP16(indeed)',
     url: 'https://jp.indeed.com/viewjob?jk=b83374903faa76df&from=shareddesktop',
-    urlForPreview: 'https://jp.indeed.com/viewjob?jk=b83374903faa76df&from=shareddesktop',
+    urlForPreview:
+      'https://jp.indeed.com/viewjob?jk=b83374903faa76df&from=shareddesktop',
     badgeText: '求人はこちら！',
     tags: ['B2B事業', 'B2C事業', 'IT'],
   },
@@ -340,7 +341,7 @@ export default function Home() {
         <h2 className={'font-angle text-5xl'}>カンレン。</h2>
       </div>
       <div className={'grid grid-cols-2 gap-x-2 gap-y-8 m-4'}>
-      {PROJECT_CARDS.map((card, index) => (
+        {PROJECT_CARDS.map((card, index) => (
           <ProjectCard
             key={index}
             title={card.title}
