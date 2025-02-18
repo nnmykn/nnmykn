@@ -101,6 +101,136 @@ function LazyImage({
   )
 }
 
+interface ProjectCardData {
+  title: string
+  url: string
+  urlForPreview: string
+  badgeText: string
+  tags?: string[]
+}
+
+const PROJECT_CARDS: ProjectCardData[] = [
+  {
+    title: '株式会社FP16',
+    url: 'https://fp16.co.jp/',
+    urlForPreview: 'https://fp16.co.jp/',
+    badgeText: '代表取締役社長',
+    tags: ['B2B事業', 'B2C事業', 'IT'],
+  },
+  {
+    title: '株式会社FP16(indeed)',
+    url: 'https://jp.indeed.com/viewjob?jk=b83374903faa76df&from=shareddesktop',
+    urlForPreview: 'https://jp.indeed.com/viewjob?jk=b83374903faa76df&from=shareddesktop',
+    badgeText: '求人はこちら！',
+    tags: ['B2B事業', 'B2C事業', 'IT'],
+  },
+  {
+    title: '株式会社FP16(Wantedly)',
+    url: 'https://www.wantedly.com/companies/fp16',
+    urlForPreview: 'https://www.wantedly.com/companies/fp16',
+    badgeText: '求人はこちら！',
+    tags: ['B2B事業', 'B2C事業', 'IT'],
+  },
+  {
+    title: 'Reactひろしま',
+    url: 'https://react-hiroshima.connpass.com/',
+    urlForPreview: 'https://react-hiroshima.connpass.com/',
+    badgeText: '勉強会やってます！',
+    tags: ['株式会社FP16', 'IT'],
+  },
+  {
+    title: 'ペイペコ',
+    url: 'https://paypeko.com/',
+    urlForPreview: 'https://paypeko.com/',
+    badgeText: '自社サービス',
+    tags: ['FP16', 'toC', '性', '投げ銭'],
+  },
+  {
+    title: '永代供養きよらか',
+    url: 'https://kiyo-raka.jp/',
+    urlForPreview: 'https://kiyo-raka.jp/',
+    badgeText: '自社サービス',
+    tags: ['FP16', '永代供養', '終活', 'エンディング産業'],
+  },
+  {
+    title: 'PEOPLE!',
+    url: 'https://ppl.fan/',
+    urlForPreview: 'https://ppl.fan/',
+    badgeText: '自社サービス',
+    tags: ['FP16', 'toC', 'Z世代'],
+  },
+  // {
+  //   title: 'エロイスト',
+  //   url: 'https://ero.ist/',
+  //   urlForPreview: 'https://ero.ist/',
+  //   badgeText: '運営中',
+  //   tags: ['成人向け', 'toC'],
+  // },
+  // {
+  //   title: 'NyanNyanClub株式会社',
+  //   url: 'https://nyan-nyan-club.com/',
+  //   urlForPreview: 'https://nyan-nyan-club.com/',
+  //   badgeText: '代表取締役社長',
+  //   tags: ['BtoC事業', '国外', 'IT'],
+  // },
+  // {
+  //   title: 'Chinon from Japan',
+  //   url: 'https://x.com/chinonsan',
+  //   urlForPreview: 'https://x.com/chinonsan',
+  //   badgeText: 'NyanNyanClub',
+  //   tags: ['toC', '国外'],
+  // },
+  {
+    title: 'FP16 スキルシート',
+    url: 'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing',
+    urlForPreview:
+      'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing',
+    badgeText: 'スキルシートです！',
+    tags: ['IT'],
+  },
+  {
+    title: '林修の今知りたいでしょ！ 技術提供',
+    url: 'https://prtimes.jp/main/html/rd/p/000000001.000143111.html',
+    urlForPreview: 'https://prtimes.jp/main/html/rd/p/000000001.000143111.html',
+    badgeText: 'TV出演',
+    tags: ['IT', 'AI'],
+  },
+  {
+    title: 'N高 個人情報流出',
+    url: 'https://www.youtube.com/watch?v=FW0apofJoRc',
+    urlForPreview: 'https://www.youtube.com/watch?v=FW0apofJoRc',
+    badgeText: 'TV出演',
+    tags: ['IT', '悲しい'],
+  },
+  {
+    title: '株式会社FP16 技術支援空きスケジュール表(PCのみ)',
+    url: 'https://fp16.co.jp/schedule',
+    urlForPreview: 'https://fp16.co.jp/schedule',
+    badgeText: 'フロントエンド開発してます！',
+    tags: ['IT'],
+  },
+  {
+    title: 'X(Twitter)',
+    url: 'https://x.com/Ninomiyarun',
+    urlForPreview: 'https://x.com/Ninomiyarun',
+    badgeText: 'SNS',
+  },
+  {
+    title: 'GitHub',
+    url: 'https://github.com/nnmykn',
+    urlForPreview: 'https://github.com/nnmykn',
+    badgeText: 'Develop',
+    tags: ['IT'],
+  },
+  {
+    title: 'Zenn',
+    url: 'https://zenn.dev/nixo',
+    urlForPreview: 'https://zenn.dev/nixo',
+    badgeText: '技術記事',
+    tags: ['IT'],
+  },
+]
+
 export default function Home() {
   const { data: images, error } = useSwr<ImageInfo[]>(
     '/memories/info.json',
@@ -210,130 +340,16 @@ export default function Home() {
         <h2 className={'font-angle text-5xl'}>カンレン。</h2>
       </div>
       <div className={'grid grid-cols-2 gap-x-2 gap-y-8 m-4'}>
-        <ProjectCard
-          title={'株式会社FP16'}
-          url={'https://fp16.co.jp/'}
-          urlForPreview={'https://fp16.co.jp/'}
-          badgeText={'代表取締役社長'}
-          tags={['B2B事業', 'B2C事業', 'IT']}
-        />
-        <ProjectCard
-          title={'株式会社FP16(indeed)'}
-          url={'https://jp.indeed.com/viewjob?jk=b83374903faa76df&from=shareddesktop'}
-          urlForPreview={'https://jp.indeed.com/viewjob?jk=b83374903faa76df&from=shareddesktop'}
-          badgeText={'求人はこちら！'}
-          tags={['B2B事業', 'B2C事業', 'IT']}
-        />
-        <ProjectCard
-          title={'株式会社FP16(Wantedly)'}
-          url={'https://www.wantedly.com/companies/fp16'}
-          urlForPreview={'https://www.wantedly.com/companies/fp16'}
-          badgeText={'求人はこちら！'}
-          tags={['B2B事業', 'B2C事業', 'IT']}
-        />
-        <ProjectCard
-          title={'Reactひろしま'}
-          url={'https://react-hiroshima.connpass.com/'}
-          urlForPreview={'https://react-hiroshima.connpass.com/'}
-          badgeText={'勉強会やってます！'}
-          tags={['株式会社FP16', 'IT']}
-        />
-        <ProjectCard
-          title={'ペイペコ'}
-          url={'https://paypeko.com/'}
-          urlForPreview={'https://paypeko.com/'}
-          badgeText={'自社サービス'}
-          tags={['FP16', 'toC', '性', '投げ銭']}
-        />
-        <ProjectCard
-          title={'永代供養きよらか'}
-          url={'https://kiyo-raka.jp/'}
-          urlForPreview={'https://kiyo-raka.jp/'}
-          badgeText={'自社サービス'}
-          tags={['FP16', '永代供養', '終活', 'エンディング産業']}
-        />
-        <ProjectCard
-          title={'PEOPLE!'}
-          url={'https://ppl.fan/'}
-          urlForPreview={'https://ppl.fan/'}
-          badgeText={'自社サービス'}
-          tags={['FP16', 'toC', 'Z世代']}
-        />
-        {/*<ProjectCard*/}
-        {/*  title={'エロイスト'}*/}
-        {/*  url={'https://ero.ist/'}*/}
-        {/*  urlForPreview={'https://ero.ist/'}*/}
-        {/*  badgeText={'運営中'}*/}
-        {/*  tags={['成人向け', 'toC']}*/}
-        {/*/>*/}
-        {/* <ProjectCard
-          title={'NyanNyanClub株式会社'}
-          url={'https://nyan-nyan-club.com/'}
-          urlForPreview={'https://nyan-nyan-club.com/'}
-          badgeText={'代表取締役社長'}
-          tags={['BtoC事業', '国外', 'IT']}
-        />
-        <ProjectCard
-          title={'Chinon from Japan'}
-          url={'https://x.com/chinonsan'}
-          urlForPreview={'https://x.com/chinonsan'}
-          badgeText={'NyanNyanClub'}
-          tags={['toC', '国外']}
-        /> */}
-        <ProjectCard
-          title={'FP16 スキルシート'}
-          url={
-            'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'
-          }
-          urlForPreview={
-            'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'
-          }
-          badgeText={'スキルシートです！'}
-          tags={['IT']}
-        />
-        <ProjectCard
-          title={'林修の今知りたいでしょ！ 技術提供'}
-          url={'https://prtimes.jp/main/html/rd/p/000000001.000143111.html'}
-          urlForPreview={
-            'https://prtimes.jp/main/html/rd/p/000000001.000143111.html'
-          }
-          badgeText={'TV出演'}
-          tags={['IT', 'AI']}
-        />
-        <ProjectCard
-          title={'N高 個人情報流出'}
-          url={'https://www.youtube.com/watch?v=FW0apofJoRc'}
-          urlForPreview={'https://www.youtube.com/watch?v=FW0apofJoRc'}
-          badgeText={'TV出演'}
-          tags={['IT', '悲しい']}
-        />
-        <ProjectCard
-          title={'株式会社FP16 技術支援空きスケジュール表(PCのみ)'}
-          url={'https://fp16.co.jp/schedule'}
-          urlForPreview={'https://fp16.co.jp/schedule'}
-          badgeText={'フロントエンド開発してます！'}
-          tags={['IT']}
-        />
-        <ProjectCard
-          title={'X(Twitter)'}
-          url={'https://x.com/Ninomiyarun'}
-          urlForPreview={'https://x.com/Ninomiyarun'}
-          badgeText={'SNS'}
-        />
-        <ProjectCard
-          title={'GitHub'}
-          url={'https://github.com/nnmykn'}
-          urlForPreview={'https://github.com/nnmykn'}
-          badgeText={'Develop'}
-          tags={['IT']}
-        />
-        <ProjectCard
-          title={'Zenn'}
-          url={'https://zenn.dev/nixo'}
-          urlForPreview={'https://zenn.dev/nixo'}
-          badgeText={'技術記事'}
-          tags={['IT']}
-        />
+      {PROJECT_CARDS.map((card, index) => (
+          <ProjectCard
+            key={index}
+            title={card.title}
+            url={card.url}
+            urlForPreview={card.urlForPreview}
+            badgeText={card.badgeText}
+            tags={card.tags}
+          />
+        ))}
       </div>
       <div className={'m-4 text-xl'}>
         <h2 className={'font-angle text-5xl'}>シャシン。</h2>
