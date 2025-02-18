@@ -379,10 +379,25 @@ export default function Home() {
         <h2 className={'font-angle text-5xl'}>ケイレキ。</h2>
       </div>
       <LinkCard
-        title={'経歴詳細'}
-        description={'ニノミヤカンの経歴について。'}
-        url={'/story'}
-        urlForPreview={'https://www.kan.run/story/'}
+          title={'経歴詳細'}
+          description={'ニノミヤカンの経歴について。'}
+          url={'/story'}
+          urlForPreview={'https://www.kan.run/story/'}
+      />
+      <div className={'m-4 text-xl'}>
+        <h2 className={'font-angle text-5xl'}>ドキュメント。</h2>
+      </div>
+      <LinkCard
+          title={'株式会社FP16に興味を持った方へ(個人向け)'}
+          description={'株式会社FP16の社風などについて。'}
+          url={'/fp16-individual'}
+          urlForPreview={'https://www.kan.run/fp16-individual/'}
+      />
+      <LinkCard
+          title={'株式会社FP16に興味を持った方へ(企業向け)'}
+          description={'株式会社FP16の技術スタックやプロダクトについて。'}
+          url={'/fp16-corporate'}
+          urlForPreview={'https://www.kan.run/fp16-corporate/'}
       />
 
       <div className={'m-4 mb-8 text-xl'}>
