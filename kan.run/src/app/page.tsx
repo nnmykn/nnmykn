@@ -298,6 +298,17 @@ export default function Home() {
       </div>
 
       <div className={'m-4 text-xl'}>
+        <h2 className={'font-angle text-5xl'}>モクテキ。</h2>
+      </div>
+      <div className={'m-4 text-sm space-y-2'}>
+        <p>バブルをもう一度日本に起こす。広島をバブルの中心に。</p>
+        <p>昭和のような価値観を取り戻す。</p>
+        <p>この世の全部を手に入れる。</p>
+        <p>エロを当たり前にする。</p>
+        <p>イーロンマスクの資産を超える。</p>
+      </div>
+
+      <div className={'m-4 text-xl'}>
         <h2 className={'font-angle text-5xl'}>ナニ？</h2>
       </div>
       <div className={'m-4 text-sm space-y-2'}>
