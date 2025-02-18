@@ -1,103 +1,111 @@
 import Page from '@/client/components/page.tsx'
-import type {Metadata} from "next";
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    description: 'ニノミヤカンが扱うことの出来る技術について。 | 技術 | 二宮 貫(Kan Ninomiya)',
-    title: '技術 | 二宮 貫(Kan Ninomiya)',
+  description:
+    'ニノミヤカンが扱うことの出来る技術について。 | 技術 | 二宮 貫(Kan Ninomiya)',
+  title: '技術 | 二宮 貫(Kan Ninomiya)',
 }
+
+interface TechCategory {
+  title: string
+  items: string[]
+}
+
+const TECH_CATEGORIES: TechCategory[] = [
+  {
+    title: '概要',
+    items: [
+      'フロントエンド開発 / バックエンド開発 / LLMサービス開発 / AIモデル開発',
+    ],
+  },
+  {
+    title: '開発言語',
+    items: ['TypeScript', 'Python'],
+  },
+  {
+    title: 'フレームワーク・ライブラリ',
+    items: [
+      'NestJS',
+      'Hono',
+      'Express',
+      'Next.js',
+      'Remix',
+      'React Native / Expo',
+      'Vue / Nuxt',
+      'LINE API SDK',
+      'Stripe SDK',
+      'TailwindCSS',
+      'MicroCMS',
+    ],
+  },
+  {
+    title: 'API',
+    items: ['OpenAPI', 'GraphQL'],
+  },
+  {
+    title: 'データベース',
+    items: ['PostgreSQL', 'MariaDB / MySQL', 'SQLite', 'DynamoDB'],
+  },
+  {
+    title: 'クラウドプラットフォーム',
+    items: ['Cloudflare', 'fly.io', 'AWS', 'GCP', 'Supabase', 'Vercel', 'Vultr'],
+  },
+  {
+    title: 'DevOps・インフラ',
+    items: ['Docker'],
+  },
+  {
+    title: 'IaC',
+    items: ['AWS CloudFormation', 'AWS CDK', 'Terraform', 'CDK for Terraform'],
+  },
+  {
+    title: 'バージョン管理・CI/CD',
+    items: [
+      'Git',
+      'GitHub',
+      'GitHub Actions',
+      'GitLab',
+      'GitLab CI/CD',
+      'Bitbucket',
+      'AWS CodeBuild',
+    ],
+  },
+  {
+    title: 'タスク管理・ドキュメント',
+    items: ['Notion', 'Backlog', 'Linear', 'Asana', 'Github Projects'],
+  },
+  {
+    title: 'AI',
+    items: [
+      'Google Colab',
+      'Ollama',
+      'LangChain',
+      'Playwright',
+      'Cheerio',
+      'Whisper',
+      'TensorFlow',
+      'YOLO',
+      'OpenAI',
+    ],
+  },
+]
 
 export default function TechPage() {
   return (
     <Page>
-      <div className={'m-4 text-xl'}>
-        <h2 className={'font-angle text-5xl'}>ギジュツ。</h2>
+      <div className="m-4 text-xl">
+        <h2 className="font-angle text-5xl">ギジュツ。</h2>
       </div>
-      <div className={'m-4 text-sm space-y-2'}>
-        <h3 className={'font-bold'}>概要</h3>
-        <p>フロントエンド開発 / バックエンド開発 / LLMサービス開発 / AIモデル開発</p>
-      </div>
-      <div className={'m-4 text-sm space-y-2'}>
-        <h3 className={'font-bold'}>開発言語</h3>
-        <p>TypeScript</p>
-        <p>Python</p>
-      </div>
-      <div className={'m-4 text-sm space-y-2'}>
-        <h3 className={'font-bold'}>フレームワーク・ライブラリ</h3>
-        <p>NestJS</p>
-        <p>Hono</p>
-        <p>Express</p>
-        <p>Next.js</p>
-        <p>Remix</p>
-        <p>React Native / Expo</p>
-        <p>Vue / Nuxt</p>
-        <p>LINE API SDK</p>
-        <p>Stripe SDK</p>
-        <p>TailwindCSS</p>
-        <p>MicroCMS</p>
-      </div>
-      <div className={'m-4 text-sm space-y-2'}>
-        <h3 className={'font-bold'}>API</h3>
-        <p>OpenAPI</p>
-        <p>GraphQL</p>
-      </div>
-      <div className={'m-4 text-sm space-y-2'}>
-        <h3 className={'font-bold'}>データベース</h3>
-        <p>PostgreSQL</p>
-        <p>MariaDB / MySQL</p>
-        <p>SQLite</p>
-        <p>DynamoDB</p>
-      </div>
-      <div className={'m-4 text-sm space-y-2'}>
-        <h3 className={'font-bold'}>クラウドプラットフォーム</h3>
-        <p>Cloudflare</p>
-        <p>fly.io</p>
-        <p>AWS</p>
-        <p>GCP</p>
-        <p>Supabase</p>
-        <p>Vercel</p>
-        <p>Vultr</p>
-      </div>
-      <div className={'m-4 text-sm space-y-2'}>
-        <h3 className={'font-bold'}>DevOps・インフラ</h3>
-        <p>Docker</p>
-      </div>
-      <div className={'m-4 text-sm space-y-2'}>
-        <h3 className={'font-bold'}>IaC</h3>
-        <p>AWS CloudFormation</p>
-        <p>AWS CDK</p>
-        <p>Terraform</p>
-        <p>CDK for Terraform</p>
-      </div>
-      <div className={'m-4 text-sm space-y-2'}>
-        <h3 className={'font-bold'}>バージョン管理・CI/CD</h3>
-        <p>Git</p>
-        <p>GitHub</p>
-        <p>GitHub Actions</p>
-        <p>GitLab</p>
-        <p>GitLab CI/CD</p>
-        <p>Bitbucket</p>
-        <p>AWS CodeBuild</p>
-      </div>
-      <div className={'m-4 text-sm space-y-2'}>
-        <h3 className={'font-bold'}>タスク管理・ドキュメント</h3>
-        <p>Notion</p>
-        <p>Backlog</p>
-        <p>Linear</p>
-        <p>Asana</p>
-        <p>Github Projects</p>
-      </div>
-
-      <div className={'m-4 text-sm space-y-2'}>
-        <h3 className={'font-bold'}>AI</h3>
-        <p>Google Colab</p>
-        <p>Ollama</p>
-        <p>LangChain</p>
-        <p>Playwright</p>
-        <p>Cheerio</p>
-        <p>Whisper</p>
-        <p>TensorFlow</p>
-        <p>YOLO</p>
-        <p>OpenAI</p>
+      <div className="space-y-4">
+        {TECH_CATEGORIES.map((category, index) => (
+          <div key={index} className="m-4 text-sm space-y-2">
+            <h3 className="font-bold">{category.title}</h3>
+            {category.items.map((item, itemIndex) => (
+              <p key={itemIndex}>{item}</p>
+            ))}
+          </div>
+        ))}
       </div>
     </Page>
   )
