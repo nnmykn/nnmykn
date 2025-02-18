@@ -24,6 +24,7 @@ export default function WebLLMChat() {
           {
             initProgressCallback: (progress) => {
               console.log('Loading progress:', progress)
+              // @ts-ignore
               setLoadingProgress(Math.round(progress * 100))
             },
           },
