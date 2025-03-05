@@ -1,6 +1,8 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import * as nodeIcal from 'node-ical'
 
+export const runtime = 'edge';
+
 // Google Calendar の ICS URL
 const CALENDAR_URL =
   'https://calendar.google.com/calendar/ical/ninomiyakan20051011%40gmail.com/public/basic.ics'
