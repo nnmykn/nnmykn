@@ -4,7 +4,7 @@ import Page from '@/client/components/page'
 import { Button } from '@/client/components/ui/button'
 import { Input } from '@/client/components/ui/input'
 import { useSearchParams } from 'next/navigation'
-import { useCallback, useEffect, useState } from 'react'
+import { Suspense, useCallback, useEffect, useState } from 'react'
 
 interface CalendarEvent {
   summary: string
@@ -95,6 +95,16 @@ const obfuscateUrls = (text: string | undefined): string => {
 }
 
 export default function CalendarPage() {
+  return (
+    <Page>
+      <Suspense fallback={<div className="p-4">カレンダーを読み込み中...</div>}>
+        <CalendarContent />
+      </Suspense>
+    </Page>
+  )
+}
+
+function CalendarContent() {
   const searchParams = useSearchParams()
   const defaultKeyword = searchParams.get('keyword') || ''
 
@@ -355,236 +365,233 @@ export default function CalendarPage() {
   const groupedEvents = groupEventsByDate(filteredEvents)
 
   return (
-    <Page>
-      <div className="container mx-auto py-8 px-4">
-        <div className="m-4 text-xl">
-          <h2 className="font-angle text-5xl">カレンダー。</h2>
-        </div>
+    <div className="container mx-auto py-8 px-4">
+      <div className="m-4 text-xl">
+        <h2 className="font-angle text-5xl">カレンダー。</h2>
+      </div>
 
-        {/* 検索フォーム */}
-        <div className="mb-8 bg-gray-50 p-6 rounded-lg shadow">
-          <div className="mb-4">
-            <label htmlFor="search" className="block text-sm font-medium mb-2">
-              検索キーワード
-            </label>
-            <div className="flex gap-2">
-              <Input
-                id="search"
-                type="text"
-                value={searchQuery}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setSearchQuery(e.target.value)
-                }
-                placeholder="検索したいイベント名、説明などを入力してください"
-                className="flex-1"
-                onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
-                  e.key === 'Enter' && handleSearch()
-                }
-              />
-              <Button onClick={handleSearch} disabled={isLoading}>
-                {isLoading ? '検索中...' : '検索'}
-              </Button>
-            </div>
-          </div>
-          <p className="text-sm text-gray-600">
-            入力されたキーワードを含むすべてのイベントが表示されます（大文字・小文字は区別されません）
-          </p>
-          <div className="mt-2 text-xs text-gray-500">
-            <span className="font-medium">ヒント:</span> URLパラメータ{' '}
-            <code>?keyword=検索語</code>{' '}
-            で検索キーワードを指定することもできます
-          </div>
-          <div className="mt-2 text-xs text-gray-500">
-            <span className="font-medium">ヒント:</span>{' '}
-            各イベントの最小時間は15分です
-          </div>
-          {selectedDate && (
-            <div className="mt-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-md inline-block text-xs">
-              {selectedDate.toLocaleDateString('ja-JP')}のイベントを表示中
-              <button
-                className="ml-2 text-blue-500 hover:text-blue-700"
-                onClick={() => setSelectedDate(null)}
-              >
-                ×
-              </button>
-            </div>
-          )}
-        </div>
-
-        {/* カレンダー表示 */}
-        <div className="mb-8 bg-white p-6 rounded-lg shadow">
-          <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center gap-4">
-              <button
-                onClick={goToPreviousMonth}
-                className="p-2 rounded-full hover:bg-gray-100"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-              <h3 className="text-xl font-semibold">
-                {currentYear}年 {monthNames[currentMonth]}
-              </h3>
-              <button
-                onClick={goToNextMonth}
-                className="p-2 rounded-full hover:bg-gray-100"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
-            <Button onClick={goToToday} variant="outline" className="text-sm">
-              今日
+      {/* 検索フォーム */}
+      <div className="mb-8 bg-gray-50 p-6 rounded-lg shadow">
+        <div className="mb-4">
+          <label htmlFor="search" className="block text-sm font-medium mb-2">
+            検索キーワード
+          </label>
+          <div className="flex gap-2">
+            <Input
+              id="search"
+              type="text"
+              value={searchQuery}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setSearchQuery(e.target.value)
+              }
+              placeholder="検索したいイベント名、説明などを入力してください"
+              className="flex-1"
+              onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
+                e.key === 'Enter' && handleSearch()
+              }
+            />
+            <Button onClick={handleSearch} disabled={isLoading}>
+              {isLoading ? '検索中...' : '検索'}
             </Button>
           </div>
+        </div>
+        <p className="text-sm text-gray-600">
+          入力されたキーワードを含むすべてのイベントが表示されます（大文字・小文字は区別されません）
+        </p>
+        <div className="mt-2 text-xs text-gray-500">
+          <span className="font-medium">ヒント:</span> URLパラメータ{' '}
+          <code>?keyword=検索語</code> で検索キーワードを指定することもできます
+        </div>
+        <div className="mt-2 text-xs text-gray-500">
+          <span className="font-medium">ヒント:</span>{' '}
+          各イベントの最小時間は15分です
+        </div>
+        {selectedDate && (
+          <div className="mt-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-md inline-block text-xs">
+            {selectedDate.toLocaleDateString('ja-JP')}のイベントを表示中
+            <button
+              className="ml-2 text-blue-500 hover:text-blue-700"
+              onClick={() => setSelectedDate(null)}
+            >
+              ×
+            </button>
+          </div>
+        )}
+      </div>
 
-          {/* 曜日の見出し */}
-          <div className="grid grid-cols-7 gap-1 mb-2">
-            {weekdays.map((day, index) => (
-              <div
-                key={day}
-                className={`text-center font-medium text-sm py-1 
-                  ${index === 0 ? 'text-red-500' : ''} 
-                  ${index === 6 ? 'text-blue-500' : ''}`}
+      {/* カレンダー表示 */}
+      <div className="mb-8 bg-white p-6 rounded-lg shadow">
+        <div className="flex justify-between items-center mb-4">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={goToPreviousMonth}
+              className="p-2 rounded-full hover:bg-gray-100"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                {day}
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <h3 className="text-xl font-semibold">
+              {currentYear}年 {monthNames[currentMonth]}
+            </h3>
+            <button
+              onClick={goToNextMonth}
+              className="p-2 rounded-full hover:bg-gray-100"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+          <Button onClick={goToToday} variant="outline" className="text-sm">
+            今日
+          </Button>
+        </div>
+
+        {/* 曜日の見出し */}
+        <div className="grid grid-cols-7 gap-1 mb-2">
+          {weekdays.map((day, index) => (
+            <div
+              key={day}
+              className={`text-center font-medium text-sm py-1 
+                ${index === 0 ? 'text-red-500' : ''} 
+                ${index === 6 ? 'text-blue-500' : ''}`}
+            >
+              {day}
+            </div>
+          ))}
+        </div>
+
+        {/* 日付グリッド */}
+        <div className="grid grid-cols-7 gap-1">{renderCalendar()}</div>
+      </div>
+
+      {filteredEvents.length > 0 ? (
+        <div>
+          <h2 className="text-xl font-semibold mb-6">
+            検索結果: {filteredEvents.length}件
+            {selectedDate && ` (${selectedDate.toLocaleDateString('ja-JP')})`}
+          </h2>
+
+          {/* タイムライン表示 */}
+          <div className="timeline-container">
+            {groupedEvents.map(({ date, events }) => (
+              <div key={date} className="mb-12" id={`day-group-${date}`}>
+                <div className="sticky top-0 bg-white py-3 z-10 border-b-2 border-gray-200">
+                  <h3 className="text-lg font-medium text-gray-800 flex items-center">
+                    <span className="inline-block w-3 h-3 bg-gray-400 rounded-full mr-2" />
+                    {formatDateHeader(date)}
+                  </h3>
+                </div>
+
+                <div className="ml-4 space-y-0 pt-4">
+                  {events.map((event, index) => {
+                    const duration = getDurationInMinutes(
+                      event.start,
+                      event.end,
+                    )
+                    const colorClass = getEventColor(duration)
+
+                    return (
+                      <div key={index} className="relative pl-10 pt-2 pb-6">
+                        {/* タイムラインのライン */}
+                        <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-300" />
+
+                        {/* タイムラインのドット */}
+                        <div className="absolute left-[-4px] top-6 w-3 h-3 rounded-full bg-blue-500 border-2 border-white shadow-sm" />
+
+                        {/* 時間表示 */}
+                        <div className="absolute left-4 top-6 transform -translate-y-1/2 text-xs font-bold text-gray-500 whitespace-nowrap">
+                          {formatTime(event.start)}
+                        </div>
+
+                        {/* イベントカード */}
+                        <div
+                          className={`relative ml-8 p-4 bg-white border-l-4 rounded-lg shadow-sm hover:shadow-md transition-shadow ${colorClass}`}
+                        >
+                          <div className="flex justify-between items-start">
+                            <h4 className="text-base font-semibold text-gray-900">
+                              {event.summary}
+                            </h4>
+                            <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                              {duration}分
+                            </span>
+                          </div>
+
+                          {event.description && (
+                            <p className="mt-2 text-sm text-gray-600">
+                              {obfuscateUrls(event.description)}
+                            </p>
+                          )}
+
+                          <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-gray-500">
+                            <span className="font-medium bg-gray-100 px-2 py-1 rounded-lg">
+                              {formatTime(event.start)} -{' '}
+                              {formatTime(event.end)}
+                            </span>
+
+                            {event.location && (
+                              <span className="flex items-center bg-gray-100 px-2 py-1 rounded-lg">
+                                <svg
+                                  className="w-3 h-3 mr-1"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                  />
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                  />
+                                </svg>
+                                {event.location}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             ))}
           </div>
-
-          {/* 日付グリッド */}
-          <div className="grid grid-cols-7 gap-1">{renderCalendar()}</div>
         </div>
-
-        {filteredEvents.length > 0 ? (
-          <div>
-            <h2 className="text-xl font-semibold mb-6">
-              検索結果: {filteredEvents.length}件
-              {selectedDate && ` (${selectedDate.toLocaleDateString('ja-JP')})`}
-            </h2>
-
-            {/* タイムライン表示 */}
-            <div className="timeline-container">
-              {groupedEvents.map(({ date, events }) => (
-                <div key={date} className="mb-12" id={`day-group-${date}`}>
-                  <div className="sticky top-0 bg-white py-3 z-10 border-b-2 border-gray-200">
-                    <h3 className="text-lg font-medium text-gray-800 flex items-center">
-                      <span className="inline-block w-3 h-3 bg-gray-400 rounded-full mr-2" />
-                      {formatDateHeader(date)}
-                    </h3>
-                  </div>
-
-                  <div className="ml-4 space-y-0 pt-4">
-                    {events.map((event, index) => {
-                      const duration = getDurationInMinutes(
-                        event.start,
-                        event.end,
-                      )
-                      const colorClass = getEventColor(duration)
-
-                      return (
-                        <div key={index} className="relative pl-10 pt-2 pb-6">
-                          {/* タイムラインのライン */}
-                          <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-300" />
-
-                          {/* タイムラインのドット */}
-                          <div className="absolute left-[-4px] top-6 w-3 h-3 rounded-full bg-blue-500 border-2 border-white shadow-sm" />
-
-                          {/* 時間表示 */}
-                          <div className="absolute left-4 top-6 transform -translate-y-1/2 text-xs font-bold text-gray-500 whitespace-nowrap">
-                            {formatTime(event.start)}
-                          </div>
-
-                          {/* イベントカード */}
-                          <div
-                            className={`relative ml-8 p-4 bg-white border-l-4 rounded-lg shadow-sm hover:shadow-md transition-shadow ${colorClass}`}
-                          >
-                            <div className="flex justify-between items-start">
-                              <h4 className="text-base font-semibold text-gray-900">
-                                {event.summary}
-                              </h4>
-                              <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
-                                {duration}分
-                              </span>
-                            </div>
-
-                            {event.description && (
-                              <p className="mt-2 text-sm text-gray-600">
-                                {obfuscateUrls(event.description)}
-                              </p>
-                            )}
-
-                            <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-gray-500">
-                              <span className="font-medium bg-gray-100 px-2 py-1 rounded-lg">
-                                {formatTime(event.start)} -{' '}
-                                {formatTime(event.end)}
-                              </span>
-
-                              {event.location && (
-                                <span className="flex items-center bg-gray-100 px-2 py-1 rounded-lg">
-                                  <svg
-                                    className="w-3 h-3 mr-1"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth="2"
-                                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                    />
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth="2"
-                                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                    />
-                                  </svg>
-                                  {event.location}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      )
-                    })}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ) : searchQuery && !isLoading ? (
-          <div className="text-center py-8">
-            <p className="text-gray-600">検索結果はありません</p>
-          </div>
-        ) : null}
-      </div>
-    </Page>
+      ) : searchQuery && !isLoading ? (
+        <div className="text-center py-8">
+          <p className="text-gray-600">検索結果はありません</p>
+        </div>
+      ) : null}
+    </div>
   )
 }

@@ -326,9 +326,7 @@ export default function Home() {
         <p>
           LLMがとても好きで、LLMを毎日愛でています。ローカルでLLMを飼っています。
         </p>
-        <p>
-          Cursor・ClineもLOVEです。
-        </p>
+        <p>Cursor・ClineもLOVEです。</p>
         <SpotifyDrawer
           trigger={
             <h3 className={'text-right font-angle text-4xl'}>ニノミヤ カン</h3>
