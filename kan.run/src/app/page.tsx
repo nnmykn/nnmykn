@@ -273,6 +273,9 @@ export default function Home() {
       </div>
       <div className={'m-4 text-sm space-y-2'}>
         <p>
+          2025年3月にフルスペックのM4 MacBook Pro 16インチが来ました！最強です！
+        </p>
+        <p>
           2025年2月に「ペイペコ」をリリースしました！(https://app.pay-peko.com/)
         </p>
         <p>
