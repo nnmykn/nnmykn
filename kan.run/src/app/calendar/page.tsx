@@ -25,7 +25,12 @@ interface ApiCalendarEvent {
 
 // 日付を「YYYY-MM-DD」形式に変換する関数
 const formatDateKey = (date: Date): string => {
-  return new Date(date).toISOString().split('T')[0]
+  // 日本時間（JST）で日付を処理するため、getFullYear(), getMonth(), getDate()を使用
+  const year = date.getFullYear()
+  // getMonthは0始まりなので+1する
+  const month = (date.getMonth() + 1).toString().padStart(2, '0')
+  const day = date.getDate().toString().padStart(2, '0')
+  return `${year}-${month}-${day}`
 }
 
 // イベントの所要時間（分）を計算
@@ -101,7 +106,7 @@ export default function CalendarPage() {
   const today = new Date()
   const [currentMonth, setCurrentMonth] = useState(today.getMonth())
   const [currentYear, setCurrentYear] = useState(today.getFullYear())
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  const [selectedDate, setSelectedDate] = useState<Date | null>(today)
 
   // 日本語の曜日
   const weekdays = ['日', '月', '火', '水', '木', '金', '土']
@@ -160,6 +165,20 @@ export default function CalendarPage() {
       searchEvents(defaultKeyword)
     }
   }, [defaultKeyword, searchEvents])
+
+  // 初期ロード時に今日の日付を選択した状態にする
+  useEffect(() => {
+    // コンポーネントがマウントされたときに、今日の日付が選択されたときの処理を実行
+    if (events.length > 0) {
+      const todayStr = formatDateKey(today)
+      const filteredDayElement = document.getElementById(
+        `day-group-${todayStr}`,
+      )
+      if (filteredDayElement) {
+        filteredDayElement.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }, [events])
 
   // 前月に移動
   const goToPreviousMonth = () => {
