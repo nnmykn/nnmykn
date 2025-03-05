@@ -31,7 +31,7 @@ const TECH_CATEGORIES: TechCategory[] = [
       'Express',
       'Next.js',
       'Remix',
-        "Svelte",
+      'Svelte',
       'React Native / Expo',
       'Vue / Nuxt',
       'LINE API SDK',
