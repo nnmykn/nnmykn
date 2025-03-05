@@ -1,11 +1,20 @@
+import ICAL from 'ical.js'
 import { type NextRequest, NextResponse } from 'next/server'
-import * as nodeIcal from 'node-ical'
 
-export const runtime = 'edge';
+export const runtime = 'edge'
 
 // Google Calendar の ICS URL
 const CALENDAR_URL =
   'https://calendar.google.com/calendar/ical/ninomiyakan20051011%40gmail.com/public/basic.ics'
+
+interface CalendarEvent {
+  summary: string
+  start: Date
+  end: Date
+  tags: string[]
+}
+
+let events: CalendarEvent[] = []
 
 export async function GET(request: NextRequest) {
   try {
@@ -20,11 +29,13 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    // iCalデータを取得
-    const icalData = await fetchCalendarData()
+    // イベントが空の場合、Google Calendarからデータを取得
+    if (events.length === 0) {
+      await fetchCalendarData()
+    }
 
     // クエリに一致するイベントをフィルタリング
-    const matchingEvents = filterEvents(icalData, query.toLowerCase())
+    const matchingEvents = filterEvents(events, query.toLowerCase())
 
     return NextResponse.json({ events: matchingEvents })
   } catch (error) {
@@ -38,64 +49,68 @@ export async function GET(request: NextRequest) {
 
 // iCalデータを取得する関数
 async function fetchCalendarData() {
-  try {
-    const response = await fetch(CALENDAR_URL)
-    if (!response.ok) {
-      throw new Error(`Failed to fetch calendar: ${response.status}`)
+  const response = await fetch(CALENDAR_URL)
+  const data = await response.text()
+  const jcalData = ICAL.parse(data)
+  const comp = new ICAL.Component(jcalData)
+  const vevents = comp.getAllSubcomponents('vevent')
+
+  events = vevents.map((vevent: ICAL.Component) => {
+    const event = new ICAL.Event(vevent)
+    const summary = event.summary
+    const tags =
+      summary
+        .match(/\[(.*?)\]/)?.[1]
+        ?.split(',')
+        .map((tag: string) => tag.trim()) || []
+    return {
+      summary: summary,
+      start: event.startDate.toJSDate(),
+      end: event.endDate.toJSDate(),
+      tags: tags,
     }
-    const icsData = await response.text()
-    return nodeIcal.parseICS(icsData)
-  } catch (error) {
-    console.error('Error fetching iCal data:', error)
-    throw error
-  }
+  })
+
+  return events
 }
 
-// 検索クエリに一致するイベントをフィルタリングする関数
-function filterEvents(icalData: any, searchQuery: string) {
-  const events = []
-
-  for (const key in icalData) {
-    const event = icalData[key]
-
-    // イベントタイプ以外のエントリーをスキップ
-    if (event.type !== 'VEVENT') {
-      continue
+// クエリに一致するイベントをフィルタリングする関数
+function filterEvents(eventsData: CalendarEvent[], searchQuery: string) {
+  return eventsData.filter((event) => {
+    // イベントのタイトルが検索クエリを含むか確認
+    if (event.summary.toLowerCase().includes(searchQuery)) {
+      return true
     }
 
-    // Personalを含むイベントをスキップ（大文字・小文字を区別）
-    const eventSummary = event.summary || ''
-    const eventDescription = event.description || ''
-
+    // タグが検索クエリを含むか確認
     if (
-      eventSummary.includes('Personal') ||
-      eventDescription.includes('Personal')
+      event.tags?.some((tag: string) => tag.toLowerCase().includes(searchQuery))
     ) {
-      continue
+      return true
     }
 
-    // イベントの各フィールドをチェック（大文字・小文字を区別せず）
-    const summary = eventSummary.toLowerCase()
-    const description = eventDescription.toLowerCase()
-    const location = (event.location || '').toLowerCase()
+    return false
+  })
+}
 
-    // 検索クエリがイベントのいずれかのフィールドに含まれているかチェック
-    if (
-      summary.includes(searchQuery) ||
-      description.includes(searchQuery) ||
-      location.includes(searchQuery)
-    ) {
-      // クライアント側に返すイベントデータを整形
-      events.push({
-        summary: event.summary || '無題のイベント',
-        description: event.description || '',
-        start: event.start,
-        end: event.end,
-        location: event.location || '',
-      })
-    }
+export async function POST(request: NextRequest) {
+  const newEvent = await request.json()
+
+  // 新しいイベントのバリデーション
+  if (!newEvent.summary || !newEvent.start || !newEvent.end) {
+    return NextResponse.json({ error: 'Invalid event data' }, { status: 400 })
   }
 
-  // 開始日時でソート
-  return events.sort((a, b) => a.start.getTime() - b.start.getTime())
+  // 新しいイベントを追加
+  events.push({
+    ...newEvent,
+    start: new Date(newEvent.start),
+    end: new Date(newEvent.end),
+    tags: newEvent.tags || [],
+  })
+
+  // イベントを日付でソート
+  events.sort((a, b) => a.start.getTime() - b.start.getTime())
+
+  return NextResponse.json(events)
 }
