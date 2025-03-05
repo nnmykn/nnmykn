@@ -342,6 +342,7 @@ export default function Home() {
       </div>
       <div className={'m-4 text-sm space-y-2'}>
         <p>【株式会社FP16 代表取締役社長兼COO】2024.01~</p>
+        {/*<p>【株式会社Everforth エンジニア】2025.03~</p>*/}
         <p>【株式会社ツクリエ エンジニア】2023.07~</p>
         <p>【株式会社stak PR・エンジニア】2022.10~2023.06</p>
         <p>【supersonar(PICRA)】2023.06~2024.01</p>
@@ -403,7 +404,7 @@ export default function Home() {
         title={'株式会社FP16に興味を持った方へ(企業向け)'}
         description={'株式会社FP16の技術スタックやプロダクトについて。'}
         url={'/fp16-corporate'}
-        urlForPreview={'https://www.kan.run/fp16-corporate/'}
+        urlForPreview={'https://fp16.co.jp/'}
       />
 
       <div className={'m-4 mb-8 text-xl'}>
