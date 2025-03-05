@@ -141,8 +141,8 @@ const PROJECT_CARDS: ProjectCardData[] = [
   },
   {
     title: 'ペイペコ',
-    url: 'https://paypeko.com/',
-    urlForPreview: 'https://paypeko.com/',
+    url: 'https://app.paypeko.com/',
+    urlForPreview: 'https://app.paypeko.com/',
     badgeText: '自社サービス',
     tags: ['FP16', 'toC', '性', '投げ銭'],
   },
