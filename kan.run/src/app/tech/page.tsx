@@ -122,7 +122,13 @@ export default function TechPage() {
       </div>
       <LinkCard
         title={'スキルシート'}
-        description={'私・株式会社FP16のスキルシートです。'}
+        description={'二宮のスキルシートです。'}
+        url={'https://www.kan.run/skill-sheet.pdf'}
+        urlForPreview={'https://www.kan.run/skill-sheet.pdf'}
+      />
+      <LinkCard
+        title={'スキルシート'}
+        description={'株式会社FP16のスキルシートです。'}
         url={
           'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'
         }
