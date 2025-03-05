@@ -1,5 +1,6 @@
 import Page from '@/client/components/page.tsx'
 import type { Metadata } from 'next'
+import LinkCard from "@/client/components/link-card.tsx";
 
 export const metadata: Metadata = {
   description:
@@ -116,6 +117,15 @@ export default function TechPage() {
           </div>
         ))}
       </div>
+      <div className="m-4 text-lg">
+        <h2 className="font-angle text-5xl">スキルシート。</h2>
+      </div>
+      <LinkCard
+          title={'スキルシート'}
+          description={'私・株式会社FP16のスキルシートです。'}
+          url={'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'}
+          urlForPreview={'https://docs.google.com/spreadsheets/d/1anze5CXwffV6P9LbRGrD0reOjjyORSZm5PlPcfO5I3Y/edit?usp=sharing'}
+      />
     </Page>
   )
 }
