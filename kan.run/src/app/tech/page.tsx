@@ -63,7 +63,7 @@ const TECH_CATEGORIES: TechCategory[] = [
   },
   {
     title: 'DevOps・インフラ',
-    items: ['Docker'],
+    items: ['Docker', 'Orbstack', 'ArgoCD', 'Kubernetes'],
   },
   {
     title: 'IaC',
