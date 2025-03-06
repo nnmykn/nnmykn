@@ -406,6 +406,12 @@ export default function Home() {
         url={'/fp16-corporate'}
         urlForPreview={'https://fp16.co.jp/'}
       />
+      <LinkCard
+        title={'しずかなインターネット'}
+        description={'すべてを書きます。'}
+        url={'https://sizu.me/kn'}
+        urlForPreview={'https://sizu.me/kn'}
+      />
 
       <div className={'m-4 mb-8 text-xl'}>
         <h2 className={'font-angle text-5xl'}>カンレン。</h2>
