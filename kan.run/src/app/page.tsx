@@ -344,7 +344,7 @@ export default function Home() {
         <p>
           LLMがとても好きで、LLMを毎日愛でています。ローカルでLLMを飼っています。
         </p>
-        <p>Cursor・ClineもLOVEです。</p>
+        <p>Cursor・OllamaLOVEです。</p>
         <SpotifyDrawer
           trigger={
             <h3 className={"text-right font-angle text-4xl"}>ニノミヤ カン</h3>
@@ -357,10 +357,8 @@ export default function Home() {
       </div>
       <div className={"m-4 text-sm space-y-2"}>
         <p>【株式会社FP16 代表取締役社長兼COO】2024.01~</p>
-        {/*<p>【株式会社Everforth エンジニア】2025.03~</p>*/}
         <p>【株式会社ツクリエ エンジニア】2023.07~</p>
         <p>【株式会社stak PR・エンジニア】2022.10~2023.06</p>
-        <p>【supersonar(PICRA)】2023.06~2024.01</p>
       </div>
 
       <div className={"m-4 text-xl"}>
@@ -421,13 +419,6 @@ export default function Home() {
         url={"/fp16-corporate"}
         urlForPreview={"https://fp16.co.jp/"}
       />
-      <LinkCard
-        title={"しずかなインターネット"}
-        description={"すべてを書きます。"}
-        url={"https://sizu.me/kn"}
-        urlForPreview={"https://sizu.me/kn"}
-      />
-
       <div className={"m-4 mb-8 text-xl"}>
         <h2 className={"font-angle text-5xl"}>カンレン。</h2>
       </div>
@@ -443,40 +434,6 @@ export default function Home() {
           />
         ))}
       </div>
-      {/*<div className={'m-4 text-xl'}>*/}
-      {/*  <h2 className={'font-angle text-5xl'}>シャシン。</h2>*/}
-      {/*</div>*/}
-      {/*<div ref={containerRef} className="p-4">*/}
-      {/*  {error && <div>Failed to load memories</div>}*/}
-      {/*  {!images && <div>Loading...</div>}*/}
-      {/*  {layout.map((row, rowIndex) => (*/}
-      {/*    <div*/}
-      {/*      key={rowIndex}*/}
-      {/*      className="flex gap-4 mb-4"*/}
-      {/*      style={{*/}
-      {/*        height: row.rowHeight,*/}
-      {/*      }}*/}
-      {/*    >*/}
-      {/*      {row.items.map((image, imageIndex) => (*/}
-      {/*        <div*/}
-      {/*          key={`${rowIndex}-${imageIndex}`}*/}
-      {/*          className="relative overflow-hidden rounded-lg"*/}
-      {/*          style={{*/}
-      {/*            width: `${row.rowHeight * image.aspectRatio}px`,*/}
-      {/*          }}*/}
-      {/*        >*/}
-      {/*          <LazyImage*/}
-      {/*            key={`${rowIndex}-${imageIndex}`}*/}
-      {/*            src={`/memories/${image.name}`}*/}
-      {/*            alt={`Memory - ${imageIndex + 1}`}*/}
-      {/*            width={row.rowHeight * image.aspectRatio}*/}
-      {/*            height={row.rowHeight}*/}
-      {/*          />*/}
-      {/*        </div>*/}
-      {/*      ))}*/}
-      {/*    </div>*/}
-      {/*  ))}*/}
-      {/*</div>*/}
     </Page>
   );
 }
