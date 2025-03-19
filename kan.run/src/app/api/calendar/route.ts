@@ -2,6 +2,7 @@ import ICAL from 'ical.js'
 import { type NextRequest, NextResponse } from 'next/server'
 
 export const runtime = 'edge'
+export const revalidate = 3600 // 1時間ごとにキャッシュを再検証
 
 // Google Calendar の ICS URL
 const CALENDAR_URL =
@@ -14,7 +15,10 @@ interface CalendarEvent {
   tags: string[]
 }
 
-let events: CalendarEvent[] = []
+// メモリキャッシュ
+let cachedEvents: CalendarEvent[] | null = null
+let lastFetched: number = 0
+const CACHE_TTL = 30 * 60 * 1000 // 30分のキャッシュ有効期間
 
 export async function GET(request: NextRequest) {
   try {
@@ -29,15 +33,17 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    // イベントが空の場合、Google Calendarからデータを取得
-    if (events.length === 0) {
-      await fetchCalendarData()
-    }
+    // キャッシュされたデータを取得または更新
+    const events = await getCalendarEvents()
 
     // クエリに一致するイベントをフィルタリング
     const matchingEvents = filterEvents(events, query.toLowerCase())
 
-    return NextResponse.json({ events: matchingEvents })
+    // レスポンスヘッダーを設定
+    const headers = new Headers()
+    headers.set('Cache-Control', 'public, max-age=600') // 10分間のクライアントキャッシュ
+
+    return NextResponse.json({ events: matchingEvents }, { headers })
   } catch (error) {
     console.error('Calendar API error:', error)
     return NextResponse.json(
@@ -47,31 +53,83 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// iCalデータを取得する関数
-async function fetchCalendarData() {
-  const response = await fetch(CALENDAR_URL)
-  const data = await response.text()
-  const jcalData = ICAL.parse(data)
-  const comp = new ICAL.Component(jcalData)
-  const vevents = comp.getAllSubcomponents('vevent')
-
-  events = vevents.map((vevent: ICAL.Component) => {
-    const event = new ICAL.Event(vevent)
-    const summary = event.summary
-    const tags =
-        summary
-            .match(/\[(.*?)\]/)?.[1]
-            ?.split(',')
-            .map((tag: string) => tag.trim()) || []
-    return {
-      summary: summary,
-      start: event.startDate.toJSDate(),
-      end: event.endDate.toJSDate(),
-      tags: tags,
+// キャッシュを考慮してカレンダーイベントを取得
+async function getCalendarEvents(): Promise<CalendarEvent[]> {
+  const now = Date.now()
+  
+  // キャッシュが有効な場合はキャッシュからデータを返す
+  if (cachedEvents && now - lastFetched < CACHE_TTL) {
+    return cachedEvents
+  }
+  
+  try {
+    // データを取得して更新
+    const events = await fetchCalendarData()
+    cachedEvents = events
+    lastFetched = now
+    return events
+  } catch (error) {
+    // エラー発生時、古いキャッシュがあればそれを使用
+    if (cachedEvents) {
+      console.warn('Failed to update calendar data, using cached data')
+      return cachedEvents
     }
-  })
+    throw error
+  }
+}
 
-  return events
+// iCalデータを取得する関数
+async function fetchCalendarData(): Promise<CalendarEvent[]> {
+  // タイムアウト付きでフェッチ
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), 5000) // 5秒タイムアウト
+  
+  try {
+    const response = await fetch(CALENDAR_URL, { 
+      signal: controller.signal,
+      headers: {
+        'Accept-Encoding': 'gzip'
+      }
+    })
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch calendar data: ${response.status}`)
+    }
+    
+    const data = await response.text()
+    clearTimeout(timeoutId)
+    
+    // データが空の場合はエラー
+    if (!data || data.trim() === '') {
+      throw new Error('Empty calendar data received')
+    }
+    
+    const jcalData = ICAL.parse(data)
+    const comp = new ICAL.Component(jcalData)
+    const vevents = comp.getAllSubcomponents('vevent')
+
+    const events = vevents.map((vevent: ICAL.Component) => {
+      const event = new ICAL.Event(vevent)
+      const summary = event.summary
+      const tags =
+          summary
+              .match(/\[(.*?)\]/)?.[1]
+              ?.split(',')
+              .map((tag: string) => tag.trim()) || []
+      return {
+        summary: summary,
+        start: event.startDate.toJSDate(),
+        end: event.endDate.toJSDate(),
+        tags: tags,
+      }
+    })
+
+    return events
+  } catch (error) {
+    clearTimeout(timeoutId)
+    console.error('Error fetching calendar data:', error)
+    throw error
+  }
 }
 
 // クエリに一致するイベントをフィルタリングする関数
@@ -101,8 +159,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid event data' }, { status: 400 })
   }
 
+  // キャッシュが無い場合は取得
+  if (!cachedEvents) {
+    cachedEvents = await fetchCalendarData()
+    lastFetched = Date.now()
+  }
+
   // 新しいイベントを追加
-  events.push({
+  cachedEvents.push({
     ...newEvent,
     start: new Date(newEvent.start),
     end: new Date(newEvent.end),
@@ -110,7 +174,7 @@ export async function POST(request: NextRequest) {
   })
 
   // イベントを日付でソート
-  events.sort((a, b) => a.start.getTime() - b.start.getTime())
+  cachedEvents.sort((a, b) => a.start.getTime() - b.start.getTime())
 
-  return NextResponse.json(events)
+  return NextResponse.json(cachedEvents)
 }
