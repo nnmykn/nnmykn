@@ -1,74 +1,75 @@
-'use client';
+'use client'
 
-import { Button } from '@/client/components/ui/button';
-import { useCallback, useState } from 'react';
-import { toast } from 'sonner';
-import { useRouter } from 'next/navigation';
-import { ArrowLeft, Check } from 'lucide-react';
-import { hackmdApi } from '@/lib/api';
-import useSWR from 'swr';
-import MarkdownEditor from '@/client/components/markdown-editor';
-import { Skeleton } from '@/client/components/ui/skeleton';
+import MarkdownEditor from '@/client/components/markdown-editor'
+import { Button } from '@/client/components/ui/button'
+import { Skeleton } from '@/client/components/ui/skeleton'
+import { hackmdApi } from '@/lib/api'
+import { ArrowLeft, Check } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { useCallback, useState } from 'react'
+import { toast } from 'sonner'
+import useSWR from 'swr'
 
 interface EditorDetailClientProps {
-  id: string;
+  id: string
 }
 
 export function EditorDetailClient({ id }: EditorDetailClientProps) {
-  const router = useRouter();
-  
+  const router = useRouter()
+
   // エディタの状態
-  const [content, setContent] = useState<string>('');
-  const [title, setTitle] = useState<string>('');
-  const [isSaving, setIsSaving] = useState<boolean>(false);
-  
+  const [content, setContent] = useState<string>('')
+  const [title, setTitle] = useState<string>('')
+  const [isSaving, setIsSaving] = useState<boolean>(false)
+
   // SWRでノートデータを取得
-  const { data: note, error, isValidating, mutate } = useSWR(
-    `note-${id}`,
-    () => hackmdApi.getNote(id),
-    {
-      onSuccess: (data) => {
-        // 初回データ取得時に内容を設定
-        if (!content && data.content) {
-          setContent(data.content);
-        }
-        if (!title && data.title) {
-          setTitle(data.title);
-        }
-      },
-      onError: () => {
-        toast.error('ノートの取得に失敗しました');
-        router.push('/editor');
-      },
-    }
-  );
+  const {
+    data: note,
+    error,
+    isValidating,
+    mutate,
+  } = useSWR(`note-${id}`, () => hackmdApi.getNote(id), {
+    onSuccess: (data) => {
+      // 初回データ取得時に内容を設定
+      if (!content && data.content) {
+        setContent(data.content)
+      }
+      if (!title && data.title) {
+        setTitle(data.title)
+      }
+    },
+    onError: () => {
+      toast.error('ノートの取得に失敗しました')
+      router.push('/editor')
+    },
+  })
 
   // ノートの更新
   const updateNote = useCallback(async () => {
-    setIsSaving(true);
+    setIsSaving(true)
     try {
-      await hackmdApi.updateNote(id, { title, content });
-      toast.success('ノートを保存しました');
+      await hackmdApi.updateNote(id, { title, content })
+      toast.success('ノートを保存しました')
       // SWRのキャッシュを更新
-      mutate();
+      mutate()
     } catch (error) {
-      console.error('Error updating note:', error);
-      toast.error('ノートの更新に失敗しました');
+      console.error('Error updating note:', error)
+      toast.error('ノートの更新に失敗しました')
     } finally {
-      setIsSaving(false);
+      setIsSaving(false)
     }
-  }, [content, id, title, mutate]);
+  }, [content, id, title, mutate])
 
   // 読み込み中の場合
-  const isLoading = !note && isValidating;
-  
+  const isLoading = !note && isValidating
+
   if (isLoading) {
     return (
       <div className="flex flex-col min-h-screen">
         <div className="sticky top-0 bg-white border-b z-10 p-4">
           <div className="flex items-center">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               size="icon"
               onClick={() => router.push('/editor')}
               className="mr-2"
@@ -86,7 +87,7 @@ export function EditorDetailClient({ id }: EditorDetailClientProps) {
           <Skeleton className="h-4 w-full max-w-2xl" />
         </div>
       </div>
-    );
+    )
   }
 
   return (
@@ -95,8 +96,8 @@ export function EditorDetailClient({ id }: EditorDetailClientProps) {
       <div className="sticky top-0 bg-white border-b z-10 p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               size="icon"
               onClick={() => router.push('/editor')}
               className="mr-2"
@@ -112,7 +113,7 @@ export function EditorDetailClient({ id }: EditorDetailClientProps) {
               disabled={isSaving}
             />
           </div>
-          <Button 
+          <Button
             onClick={updateNote}
             disabled={isSaving}
             size="sm"
@@ -137,7 +138,7 @@ export function EditorDetailClient({ id }: EditorDetailClientProps) {
 
       {/* モバイル用の保存ボタン */}
       <div className="fixed bottom-6 right-6 sm:hidden">
-        <Button 
+        <Button
           onClick={updateNote}
           disabled={isSaving}
           size="lg"
@@ -147,5 +148,5 @@ export function EditorDetailClient({ id }: EditorDetailClientProps) {
         </Button>
       </div>
     </div>
-  );
-} 
+  )
+}

@@ -1,15 +1,15 @@
-'use client';
+'use client'
 
-import { useState, useEffect } from 'react';
-import '@uiw/react-md-editor/markdown-editor.css';
-import '@uiw/react-markdown-preview/markdown.css';
-import MDEditor from "@uiw/react-md-editor"
+import { useEffect, useState } from 'react'
+import '@uiw/react-md-editor/markdown-editor.css'
+import '@uiw/react-markdown-preview/markdown.css'
+import MDEditor from '@uiw/react-md-editor'
 
 interface MarkdownEditorProps {
-  content: string;
-  onChange: (content: string) => void;
-  height?: number;
-  placeholder?: string;
+  content: string
+  onChange: (content: string) => void
+  height?: number
+  placeholder?: string
 }
 
 export default function MarkdownEditor({
@@ -19,20 +19,21 @@ export default function MarkdownEditor({
   placeholder = 'Markdownを入力してください...',
 }: MarkdownEditorProps) {
   // ビューポートの高さを計算するための状態
-  const [visibleHeight, setVisibleHeight] = useState<number>(height);
+  const [visibleHeight, setVisibleHeight] = useState<number>(height)
 
   // 親からのheightが指定されていない場合は、ビューポートの高さに基づいて計算
   useEffect(() => {
-    if (height === 400) { // デフォルト値が指定されている場合のみ自動調整
+    if (height === 400) {
+      // デフォルト値が指定されている場合のみ自動調整
       const updateHeight = () => {
-        setVisibleHeight(window.innerHeight - 160); // ヘッダーとその他の要素の高さを考慮
-      };
+        setVisibleHeight(window.innerHeight - 160) // ヘッダーとその他の要素の高さを考慮
+      }
 
-      updateHeight();
-      window.addEventListener('resize', updateHeight);
-      return () => window.removeEventListener('resize', updateHeight);
+      updateHeight()
+      window.addEventListener('resize', updateHeight)
+      return () => window.removeEventListener('resize', updateHeight)
     }
-  }, [height]);
+  }, [height])
 
   return (
     <div data-color-mode="light">
@@ -49,5 +50,5 @@ export default function MarkdownEditor({
         }}
       />
     </div>
-  );
-} 
+  )
+}

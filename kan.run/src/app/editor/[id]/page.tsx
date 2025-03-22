@@ -1,6 +1,6 @@
-import { Suspense } from 'react';
-import { EditorDetailClient } from './editor-detail-client';
-import Loading from './loading';
+import { Suspense } from 'react'
+import { EditorDetailClient } from './editor-detail-client.tsx'
+import Loading from './loading'
 
 export const runtime = 'edge'
 
@@ -9,11 +9,11 @@ export default async function EditorDetailPage({
 }: {
   params: Promise<{ id: string }>
 }) {
-  const { id } = await params;
+  const { id } = await params
 
   return (
     <Suspense fallback={<Loading />}>
       <EditorDetailClient id={id} />
     </Suspense>
-  );
+  )
 }

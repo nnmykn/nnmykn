@@ -1,4 +1,4 @@
-import Page from "@/client/components/page.tsx";
+import Page from '@/client/components/page.tsx'
 
 export default function Fp16IndividualPage() {
   return (
@@ -19,7 +19,7 @@ export default function Fp16IndividualPage() {
       </div>
       <iframe
         src="https://lumalabs.ai/embed/e5bf4020-6161-4655-aadc-80c8830f3a76?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false"
-        className={"w-full h-96"}
+        className={'w-full h-96'}
         frameBorder="0"
         title="luma embed"
       />
@@ -28,10 +28,10 @@ export default function Fp16IndividualPage() {
       </div>
       <iframe
         src="https://lumalabs.ai/embed/4a907500-5c39-42cd-a011-a09a0da7d27b?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false"
-        className={"w-full h-96"}
+        className={'w-full h-96'}
         frameBorder="0"
         title="luma embed"
       />
     </Page>
-  );
+  )
 }

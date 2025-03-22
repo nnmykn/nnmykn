@@ -6,7 +6,7 @@ export const revalidate = 3600 // 1時間ごとにキャッシュを再検証
 
 // Google Calendar の ICS URL
 const CALENDAR_URL =
-    'https://calendar.google.com/calendar/ical/ninomiyakan20051011%40gmail.com/public/basic.ics'
+  'https://calendar.google.com/calendar/ical/ninomiyakan20051011%40gmail.com/public/basic.ics'
 
 interface CalendarEvent {
   summary: string
@@ -17,7 +17,7 @@ interface CalendarEvent {
 
 // メモリキャッシュ
 let cachedEvents: CalendarEvent[] | null = null
-let lastFetched: number = 0
+let lastFetched = 0
 const CACHE_TTL = 30 * 60 * 1000 // 30分のキャッシュ有効期間
 
 export async function GET(request: NextRequest) {
@@ -28,8 +28,8 @@ export async function GET(request: NextRequest) {
 
     if (!query) {
       return NextResponse.json(
-          { error: '検索クエリが指定されていません' },
-          { status: 400 },
+        { error: '検索クエリが指定されていません' },
+        { status: 400 },
       )
     }
 
@@ -47,8 +47,8 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('Calendar API error:', error)
     return NextResponse.json(
-        { error: 'カレンダーデータの取得中にエラーが発生しました' },
-        { status: 500 },
+      { error: 'カレンダーデータの取得中にエラーが発生しました' },
+      { status: 500 },
     )
   }
 }
@@ -56,12 +56,12 @@ export async function GET(request: NextRequest) {
 // キャッシュを考慮してカレンダーイベントを取得
 async function getCalendarEvents(): Promise<CalendarEvent[]> {
   const now = Date.now()
-  
+
   // キャッシュが有効な場合はキャッシュからデータを返す
   if (cachedEvents && now - lastFetched < CACHE_TTL) {
     return cachedEvents
   }
-  
+
   try {
     // データを取得して更新
     const events = await fetchCalendarData()
@@ -83,27 +83,27 @@ async function fetchCalendarData(): Promise<CalendarEvent[]> {
   // タイムアウト付きでフェッチ
   const controller = new AbortController()
   const timeoutId = setTimeout(() => controller.abort(), 5000) // 5秒タイムアウト
-  
+
   try {
-    const response = await fetch(CALENDAR_URL, { 
+    const response = await fetch(CALENDAR_URL, {
       signal: controller.signal,
       headers: {
-        'Accept-Encoding': 'gzip'
-      }
+        'Accept-Encoding': 'gzip',
+      },
     })
-    
+
     if (!response.ok) {
       throw new Error(`Failed to fetch calendar data: ${response.status}`)
     }
-    
+
     const data = await response.text()
     clearTimeout(timeoutId)
-    
+
     // データが空の場合はエラー
     if (!data || data.trim() === '') {
       throw new Error('Empty calendar data received')
     }
-    
+
     const jcalData = ICAL.parse(data)
     const comp = new ICAL.Component(jcalData)
     const vevents = comp.getAllSubcomponents('vevent')
@@ -112,10 +112,10 @@ async function fetchCalendarData(): Promise<CalendarEvent[]> {
       const event = new ICAL.Event(vevent)
       const summary = event.summary
       const tags =
-          summary
-              .match(/\[(.*?)\]/)?.[1]
-              ?.split(',')
-              .map((tag: string) => tag.trim()) || []
+        summary
+          .match(/\[(.*?)\]/)?.[1]
+          ?.split(',')
+          .map((tag: string) => tag.trim()) || []
       return {
         summary: summary,
         start: event.startDate.toJSDate(),
@@ -142,7 +142,7 @@ function filterEvents(eventsData: CalendarEvent[], searchQuery: string) {
 
     // タグが検索クエリを含むか確認
     if (
-        event.tags?.some((tag: string) => tag.toLowerCase().includes(searchQuery))
+      event.tags?.some((tag: string) => tag.toLowerCase().includes(searchQuery))
     ) {
       return true
     }

@@ -1,32 +1,32 @@
 // HackMD API関連の型定義
 export interface HackMDNote {
-  id: string;
-  title: string;
-  content: string;
-  lastChangedAt: string;
+  id: string
+  title: string
+  content: string
+  lastChangedAt: string
   lastChangeUser: {
-    name: string;
-    photo: string;
-    biography: string;
-    email: string;
-  };
-  createdAt: string;
-  publishType: string;
-  permalink: string;
-  readPermission: string;
-  writePermission: string;
+    name: string
+    photo: string
+    biography: string
+    email: string
+  }
+  createdAt: string
+  publishType: string
+  permalink: string
+  readPermission: string
+  writePermission: string
 }
 
 export interface UpdateNoteData {
-  title: string;
-  content: string;
+  title: string
+  content: string
 }
 
 export interface CreateNoteData {
-  title: string;
-  content: string;
-  readPermission?: string;
-  writePermission?: string;
+  title: string
+  content: string
+  readPermission?: string
+  writePermission?: string
 }
 
 // API Clientの実装
@@ -35,28 +35,28 @@ export const hackmdApi = {
    * ノート一覧を取得
    */
   getNotes: async (): Promise<HackMDNote[]> => {
-    const response = await fetch('/api/hackmd/notes');
-    
+    const response = await fetch('/api/hackmd/notes')
+
     if (!response.ok) {
-      throw new Error('ノート一覧の取得に失敗しました');
+      throw new Error('ノート一覧の取得に失敗しました')
     }
-    
-    return response.json();
+
+    return response.json()
   },
-  
+
   /**
    * 特定のノートを取得
    */
   getNote: async (id: string): Promise<HackMDNote> => {
-    const response = await fetch(`/api/hackmd/notes/${id}`);
-    
+    const response = await fetch(`/api/hackmd/notes/${id}`)
+
     if (!response.ok) {
-      throw new Error('ノートの取得に失敗しました');
+      throw new Error('ノートの取得に失敗しました')
     }
-    
-    return response.json();
+
+    return response.json()
   },
-  
+
   /**
    * 新規ノートを作成
    */
@@ -71,15 +71,15 @@ export const hackmdApi = {
         readPermission: data.readPermission || 'owner',
         writePermission: data.writePermission || 'owner',
       }),
-    });
-    
+    })
+
     if (!response.ok) {
-      throw new Error('ノートの作成に失敗しました');
+      throw new Error('ノートの作成に失敗しました')
     }
-    
-    return response.json();
+
+    return response.json()
   },
-  
+
   /**
    * ノートを更新
    */
@@ -90,12 +90,12 @@ export const hackmdApi = {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    });
-    
+    })
+
     if (!response.ok) {
-      throw new Error('ノートの更新に失敗しました');
+      throw new Error('ノートの更新に失敗しました')
     }
-    
-    return response.json();
+
+    return response.json()
   },
-}; 
+}

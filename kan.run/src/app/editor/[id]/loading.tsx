@@ -1,5 +1,5 @@
-import { ArrowLeft } from 'lucide-react';
-import { Skeleton } from '@/client/components/ui/skeleton';
+import { Skeleton } from '@/client/components/ui/skeleton'
+import { ArrowLeft } from 'lucide-react'
 
 export default function Loading() {
   return (
@@ -20,5 +20,5 @@ export default function Loading() {
         <Skeleton className="h-4 w-full max-w-2xl" />
       </div>
     </div>
-  );
-} 
+  )
+}
