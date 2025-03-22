@@ -11,6 +11,8 @@ import '@uiw/react-markdown-preview/markdown.css';
 import { hackmdApi } from '@/lib/api';
 import useSWR from 'swr';
 
+export const runtime = 'edge'
+
 // クライアントサイドでのみインポートするためにdynamicを使用
 const MDEditor = dynamic(() => import('@uiw/react-md-editor'), { ssr: false });
 

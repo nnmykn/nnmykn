@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { serverApi } from '@/lib/api';
 
+export const runtime = 'edge'
+
 export async function GET() {
   try {
     const data = await serverApi.getNotes();
