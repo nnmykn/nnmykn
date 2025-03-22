@@ -10,7 +10,7 @@ import useSWR from 'swr';
 
 export default function EditorPage() {
   const router = useRouter();
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('list');
   
   // SWRでノート一覧を取得
   const { data: notes, error, isLoading, mutate } = useSWR<HackMDNote[]>(

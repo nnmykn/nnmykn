@@ -4,13 +4,12 @@ import Loading from './loading';
 
 export const runtime = 'edge'
 
-// ページコンポーネントのprops型定義
-interface EditorDetailPageProps {
-  params: { id: string };
-}
-
-export default async function EditorDetailPage(props: EditorDetailPageProps) {
-  const { id } = props.params;
+export default async function EditorDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params;
 
   return (
     <Suspense fallback={<Loading />}>
