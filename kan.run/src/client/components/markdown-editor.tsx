@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic'
 
 const MDEditor = dynamic(
   () => import('@uiw/react-md-editor').then((mod) => mod.default),
-  { ssr: false }
+  { ssr: false, loading: () => <div>読み込み中...</div> }
 )
 
 interface MarkdownEditorProps {
@@ -25,10 +25,16 @@ export default function MarkdownEditor({
 }: MarkdownEditorProps) {
   // ビューポートの高さを計算するための状態
   const [visibleHeight, setVisibleHeight] = useState<number>(height)
+  const [mounted, setMounted] = useState<boolean>(false)
+
+  // クライアントサイドでのみ実行されるようにする
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // 親からのheightが指定されていない場合は、ビューポートの高さに基づいて計算
   useEffect(() => {
-    if (height === 400) {
+    if (height === 400 && mounted) {
       // デフォルト値が指定されている場合のみ自動調整
       const updateHeight = () => {
         setVisibleHeight(window.innerHeight - 160) // ヘッダーとその他の要素の高さを考慮
@@ -38,7 +44,12 @@ export default function MarkdownEditor({
       window.addEventListener('resize', updateHeight)
       return () => window.removeEventListener('resize', updateHeight)
     }
-  }, [height])
+  }, [height, mounted])
+
+  // サーバーサイドレンダリング時は何も表示しない
+  if (!mounted) {
+    return null
+  }
 
   return (
     <div data-color-mode="light">
