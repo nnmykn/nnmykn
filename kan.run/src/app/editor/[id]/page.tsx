@@ -7,9 +7,9 @@ export const runtime = 'edge'
 export default async function EditorDetailPage({
   params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }) {
-  const { id } = params
+  const { id } = await params
 
   return (
     <Suspense fallback={<Loading />}>
