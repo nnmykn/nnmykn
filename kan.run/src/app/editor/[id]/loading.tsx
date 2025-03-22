@@ -1,4 +1,5 @@
 import { ArrowLeft } from 'lucide-react';
+import { Skeleton } from '@/client/components/ui/skeleton';
 
 export default function Loading() {
   return (
@@ -8,11 +9,15 @@ export default function Loading() {
           <div className="w-10 h-10 flex items-center justify-center mr-2">
             <ArrowLeft className="h-4 w-4" />
           </div>
-          <h1 className="text-xl font-bold">読み込み中...</h1>
+          <Skeleton className="h-8 w-48" />
         </div>
       </div>
-      <div className="flex-1 flex justify-center items-center">
-        <p className="text-gray-500">ノートを読み込んでいます...</p>
+      <div className="flex-1 p-6">
+        <Skeleton className="h-10 w-full max-w-md mb-6" />
+        <Skeleton className="h-64 w-full mb-4" />
+        <Skeleton className="h-4 w-full max-w-4xl mb-2" />
+        <Skeleton className="h-4 w-full max-w-3xl mb-2" />
+        <Skeleton className="h-4 w-full max-w-2xl" />
       </div>
     </div>
   );

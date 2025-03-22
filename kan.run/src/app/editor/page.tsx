@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import { PlusIcon, ListIcon, LayoutGridIcon } from 'lucide-react';
 import { hackmdApi, type HackMDNote } from '@/lib/api';
 import useSWR from 'swr';
+import { Skeleton } from '@/client/components/ui/skeleton';
 
 export default function EditorPage() {
   const router = useRouter();
@@ -137,8 +138,10 @@ export default function EditorPage() {
           )}
           
           {isLoading && (
-            <div className="flex justify-center items-center h-32">
-              <p className="text-gray-500">読み込み中...</p>
+            <div className="space-y-2">
+              {[...Array(5)].map((_, index) => (
+                <Skeleton key={index} className="h-20 w-full rounded-lg" />
+              ))}
             </div>
           )}
         </div>
