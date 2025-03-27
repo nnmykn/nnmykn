@@ -17,6 +17,9 @@ export default function Fp16IndividualPage() {
       <div className="m-4">
         <h2 className="text-lg">FP16* Office。</h2>
       </div>
+        <div className="m-4 text-sm space-y-4">
+            <p>今はもう人数が増えたので別の部屋に移動しています...</p>
+        </div>
       <iframe
         src="https://lumalabs.ai/embed/e5bf4020-6161-4655-aadc-80c8830f3a76?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false"
         className={'w-full h-96'}
