@@ -18,9 +18,12 @@ export default function Page({ children }: Props) {
     <div>
       <div className={'space-y-4'}>
         <Link href={'/'}>
-          <h1 className={'font-angle text-7xl text-center my-32'}>
+          <div className='flex items-center justify-center my-32'>
+          <img src='/ai-ninomiya-icon.png' className='w-[40%] h-auto' alt={'ai-ninomiya-icon'} />
+          <h1 className={'font-angle text-7xl text-center hidden'}>
             ニノミヤ カン。
-          </h1>
+            </h1>
+          </div>
         </Link>
       </div>
       <div>{children}</div>
