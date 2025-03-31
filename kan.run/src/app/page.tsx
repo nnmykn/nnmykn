@@ -313,7 +313,7 @@ export default function Home() {
       </div>
 
       <div className={'m-4 text-xl'}>
-        <h2 className={'font-angle text-5xl'}>モクテキ。</h2>
+        <h2 className={'font-angle text-5xl'}>ビジョン。</h2>
       </div>
       <div className={'m-4 text-sm space-y-2'}>
         <p>バブルをもう一度日本に起こす。広島をバブルの中心に。</p>
