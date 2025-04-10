@@ -124,6 +124,14 @@ const PROJECT_CARDS: ProjectCardData[] = [
     tags: ['B2B事業', 'B2C事業', 'IT'],
   },
   {
+    title: 'FP16 スキルシート',
+    url: 'https://stg.about.fp16.co.jp',
+    urlForPreview:
+      'https://stg.about.fp16.co.jp',
+    badgeText: '現在開発中',
+    tags: ['IT'],
+  },
+  {
     title: '株式会社FP16 求人ページ',
     url: 'https://fp16.co.jp/recruit',
     urlForPreview: 'https://fp16.co.jp/recruit',
@@ -151,20 +159,20 @@ const PROJECT_CARDS: ProjectCardData[] = [
   //   badgeText: '自社サービス',
   //   tags: ['FP16', 'toC', '性', '投げ銭'],
   // },
-  {
-    title: '永代供養きよらか',
-    url: 'https://kiyo-raka.jp/',
-    urlForPreview: 'https://kiyo-raka.jp/',
-    badgeText: '自社サービス',
-    tags: ['FP16', '永代供養', '終活', 'エンディング産業'],
-  },
-  {
-    title: 'PEOPLE!',
-    url: 'https://ppl.fan/',
-    urlForPreview: 'https://ppl.fan/',
-    badgeText: '自社サービス',
-    tags: ['FP16', 'toC', 'Z世代'],
-  },
+  // {
+  //   title: '永代供養きよらか',
+  //   url: 'https://kiyo-raka.jp/',
+  //   urlForPreview: 'https://kiyo-raka.jp/',
+  //   badgeText: '自社サービス',
+  //   tags: ['FP16', '永代供養', '終活', 'エンディング産業'],
+  // },
+  // {
+  //   title: 'PEOPLE!',
+  //   url: 'https://ppl.fan/',
+  //   urlForPreview: 'https://ppl.fan/',
+  //   badgeText: '自社サービス',
+  //   tags: ['FP16', 'toC', 'Z世代'],
+  // },
   // {
   //   title: 'エロイスト',
   //   url: 'https://ero.ist/',
@@ -179,14 +187,6 @@ const PROJECT_CARDS: ProjectCardData[] = [
   //   badgeText: '代表取締役社長',
   //   tags: ['BtoC事業', '国外', 'IT'],
   // },
-  {
-    title: 'FP16 スキルシート',
-    url: 'https://stg.about.fp16.co.jp',
-    urlForPreview:
-      'https://stg.about.fp16.co.jp',
-    badgeText: '現在開発中',
-    tags: ['IT'],
-  },
   {
     title: '林修の今知りたいでしょ！ 技術提供',
     url: 'https://prtimes.jp/main/html/rd/p/000000001.000143111.html',
