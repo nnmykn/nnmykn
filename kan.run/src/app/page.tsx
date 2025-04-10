@@ -127,7 +127,7 @@ const PROJECT_CARDS: ProjectCardData[] = [
     title: '株式会社FP16 求人ページ',
     url: 'https://fp16.co.jp/recruit',
     urlForPreview: 'https://fp16.co.jp/recruit',
-    badgeText: 'ちょい経験エンジニア求む！',
+    badgeText: '世界変えたいエンジニア求む！',
     tags: ['B2B事業', 'B2C事業', 'IT'],
   },
   {
